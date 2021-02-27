@@ -1,0 +1,67 @@
+html, body {
+	font-family: Optima, sans-serif;
+	margin: 0;
+	height: 100%;
+}
+.titlebody {
+	float: left;	
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	background:linear-gradient(to top, #4E4E4E, #282828);
+	position: static;
+
+}
+.titlebody h1{
+	color: white;
+	margin-top: 2rem;
+
+}
+.titlebody img{	
+	margin-top: 23rem;
+}
+.logonlbl {
+	float: right;
+	position: relative;
+	top: 0;
+	width: 50%;
+	height: 100%;
+
+}
+.logonlbl h2 {
+	text-align: center;
+	margin-right: 6%;
+}
+.loginform {
+	position: relative;
+	top: 40%;
+	width: 30%;
+	margin: 0;
+	left: 40%;
+}
+.cmpuser {
+	display: block;
+	margin-bottom: 0.5rem;
+	width: 16rem;
+	height: 2rem;
+	font-size: 1rem;
+}
+.cmpsenha {
+	display: block;
+	width: 16rem;
+	height: 2rem;
+	font-size: 1rem;
+}
+.cmpentrar {
+	display: block;
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+	width: 5rem;
+	height: 2rem;
+}
+.cmpcad{
+	display: block;
+}
+
+
+

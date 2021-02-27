@@ -1,0 +1,85 @@
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+.modalEditCategoria{
+    background-color: white;
+    width: 39rem; 
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+.modal-container.mostrar {
+    display: flex;
+}
+.tetoEditCategoria {
+    height: 2.5rem;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.tetoEditCategoria p {
+    margin: 0;
+    padding-top: 1.5%;
+    padding-left: 1%;
+}
+.mostrar .modalEditCategoria {
+    animation: modal .1s;
+}
+.fecharEditCategoria {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 0.5%;
+}
+.formEditCategoria {
+    margin: 0 auto;
+    padding: 1.5%;
+}
+.formEditCategoria {
+    margin: 0 auto;
+    padding: 1.5%;
+}
+.btnEditarCateg {
+    font-family: Optima, sans-serif;
+    height: 2rem;
+    background-color: #EE4D4D;
+    color: white;
+    font-size: 1.1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    right: 1.5%;
+}
+
+.btnEditarCateg:hover {
+    background-color: #E40000;
+}
+.msgCateg {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+}

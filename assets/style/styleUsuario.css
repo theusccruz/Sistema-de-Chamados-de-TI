@@ -1,0 +1,394 @@
+.titleName {
+    text-align: center;
+    margin-top: 4%;
+    color: #004cda;
+    font-size: 1.5rem;
+}
+.chAbertos {
+    margin-top: 5%;
+}
+
+.gridUser {
+    position: static;
+    left: 16%;
+    top: 2rem;
+    color: black;
+    background-color: #ffffff;
+    width: 80%;    
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+    height: 45rem;
+    overflow: auto;
+    display: block;
+    border-collapse: collapse;
+    clear: right;
+}
+
+.gridUser tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+
+/*.chAbertos tr:nth-child(even) {
+    background-color: #e2e2e2;
+}*/
+
+.cabecaGrid {
+    height: 2rem;
+    background-color: #EE4D4D;
+    color: white;
+}
+
+.dados a {
+    text-decoration: none;
+}
+.space {
+    padding: 0 1%;
+}
+.atualiza {
+    cursor: pointer;
+    position: static;
+    width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    margin-right: 10%;
+    margin-bottom: 0.5rem;
+    float: right;
+}
+.nvChamado {
+    cursor: pointer;
+    position: static;
+    font-size: 1rem;
+    margin-left: 10%;
+    margin-bottom: 0.5rem;
+    padding: 0.2%;
+}
+
+.nvChamado img{
+    width: 25%;
+    vertical-align: middle;
+}
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+.modalDevolver {
+    background-color: white;
+    width: 35rem;
+    height: 15rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+.modalFechar {
+    background-color: white;
+    width: 30rem;
+    height: 26rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+.btnEnvio {
+    position: absolute;
+    right: 1%;
+}
+.tetoDevolver {
+    height: 15%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.tetoDevolver p {
+    margin: 0;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+.tetoFechar {
+    height: 10%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.tetoFechar p {
+    margin: 0;
+    padding-top: 2.5%;
+    padding-left: 1%;
+}
+.modalFechar form {
+    padding: 2%;
+    margin-top: 1%;
+}
+.mostrar .modalFechar {
+    animation: modal .1s;
+}
+
+.msgFechar {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 28%;
+}
+.msgAlertaFechar {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 30%;
+}
+
+.modalDevolver form {
+    padding: 2%;
+    margin-top: 1%;
+}
+.msgAreaDevolver {
+    width: 85%;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+.imgChatUser {
+    width: 2rem;
+}
+.obsResolverChamado {
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    width: 75%;
+}
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10rem, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .modalDevolver {
+    animation: modal .1s;
+}
+.fecharResolv {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 10%;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 1%;
+}
+
+.fecharDev {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 15%;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 1%;
+}
+
+.modal-container.mostrar {
+    display: flex;
+}
+
+.dadosCH {
+    border: none;
+    outline: none;
+    display: inline;
+    font-size: 1rem;
+}
+
+.msgFinal {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 28%;
+}
+
+.msgDev {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 15%;
+}
+
+.msgAlertaFinal {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 30%;
+}
+
+.msgAlertaDev {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 15%;
+}
+
+.aberto {
+    border: solid 0.1rem rgb(139, 139, 139);
+}
+.atribuido {
+    background-color: #009a9e;
+    color: white;
+    padding: 4%;
+    font-size: 95%;
+}
+
+.atendimento {
+    background-color: #ffcf04;
+    color: black;
+    padding: 4%;
+    font-size: 95%;
+}
+
+.concluido {
+    background-color: #2a00bb;
+    color: white;
+    padding: 4%;
+    font-size: 95%;
+}
+.fechado {
+    background-color: #b1b1b1;
+    padding: 4%;
+    font-size: 95%;
+}
+.devolvido {
+    background-color: #ff7100;
+    color: white;
+    padding: 4%;
+    font-size: 95%;
+}
+
+.imediata {
+    background-color: rgb(255 24 24 / 80%);
+    color: white;
+}
+.ordem {
+    width: 5%;
+}
+.colocacao {
+    border: solid 0.3rem #089567;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    background: #089567;
+    color: white;
+    font-weight: bold;
+}
+.gridHistory {
+    height: 50rem;
+    width: 95%;
+
+}
+.numero {
+    width: 4%;
+}
+.abertura {
+    width: 8%;
+}
+.assunto {
+    width: 12%;;
+}
+.chat {
+    width: 7%;
+}
+.solicitante {
+    width: 10%;
+}
+.setor {
+    width: 8%;
+}
+.categoria {
+    width: 8%;
+}
+.status {
+    width: 8%;
+}
+.prioridade {
+    width: 6%;
+}
+.gravidade {
+    width: 6%;
+}
+.tecnico {
+    width: 8%;
+}
+.anexo {
+    width: 5%;
+}
+.acoes {
+    width: 5%;
+}
+.dados tr {
+    height: 4rem;
+}
+.anx {
+    cursor: pointer;
+}
+
+.file {
+    width: 30%
+}
+.titleAnx {
+    font-size: 1rem;
+    display: inline;
+}
+.enviar {
+    font-family: Optima, sans-serif;
+    height: 2rem;
+    background-color: #EE4D4D;
+    color: white;
+    font-size: 1.1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    bottom: 2%;
+    right: 1.5%;
+}
+
+.enviar:hover {
+    background-color: #E40000;
+}
+
+
+
+
+
+

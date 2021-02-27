@@ -1,0 +1,17 @@
+.cabeca {
+    height: 5%;
+}
+.tetoIntera, .tetoChat, .tetoOrdem {
+    height: 2.5rem;
+}
+.fecharIntera, .fecharChat, .fecharOrdem {
+    height: 2.5rem;
+    width: 4rem;
+}
+ 
+@media screen and (max-height: 768px) {
+    .cabeca {
+        height: 2.5rem;
+    }
+   
+}

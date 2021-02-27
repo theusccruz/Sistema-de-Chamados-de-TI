@@ -1,0 +1,186 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+    background-color: #FAFAFA;
+}
+
+
+/* MENU LATERAL */
+.nameUser {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.menuCont {
+    color: white;
+    width: 15%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0;
+    float: left;
+    position: fixed;
+    top: 0;
+    background-color: #353535;
+    box-shadow: 0.2rem 0 0.2rem grey;
+    font-size: 1.15rem;
+}
+
+.titleMenu {
+    display: flex;
+}
+
+.sair {
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    width: 4.5rem;
+    left: 0;
+}
+
+.menuCont ul li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 2%;
+    text-align: left;
+    list-style-type: none;
+    width: 97%;
+    position: relative;
+}
+
+.menuCont a {
+    background-color: none;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5%;
+    display: block;
+}
+
+.menuPai:hover ul {
+    display: block;
+}
+
+.menuPai2:hover ul {
+    display: block;
+}
+
+.submenu {
+    text-align: left;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #353535;
+    color: black;
+    padding: 0;
+    width: 70%;
+    display: none;
+    border-radius: 1%;
+    font-size: 1rem;
+}
+
+.opcao:hover {
+    background-color: #2E2E2E;
+    color: white;
+}
+
+.colunMenu {
+    margin: 0;
+    padding: 0;
+}
+
+.colunMenu a {
+    color: white;
+}
+
+
+/* FINAL MENU LATERAL */
+
+
+/* ---CONTEÚDO GERAL--- */
+
+.geral {
+    width: 85%;
+    float: right;
+    height: 100%;
+}
+
+
+/* --CABEÇALHO-- */
+
+.cabeca {
+    background: linear-gradient(to right, #E14141, #BF3E3E);
+    color: white;
+    height: 5%;
+    font-size: 0.8rem;
+    text-align: center;
+    position: absolute;
+    width: 85%;
+    top: 0;
+}
+
+.title {
+    margin: 3% 0 0 0;
+    padding: 0;
+    color: white;
+}
+
+.cTitle {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+
+/* --FINAL CABEÇALHO-- */
+
+
+/* --CONTEÚDO-- */
+
+.conteudo {
+    width: 100%;
+}
+
+
+/* --FINAL CONTEÚDO-- */
+
+
+/* --RODAPÉ-- */
+
+.rodape {
+    background: linear-gradient(to right, #E14141, #BF3E3E);
+    color: white;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+}
+
+
+/* --FINAL RODAPÉ-- */
+
+
+/* ---FINAL CONTEÚDO GERAL--- */
+
+
+/*
+		BOTÃO DE MENU
+.menu {
+	background-image: url('../img/menu2.png');
+	width: 4%;
+	height: 100%;
+}
+.btnMenu {
+	margin-left: 0.5%;
+	position: fixed;	
+	left: 0;
+	display: none;
+}
+*/

@@ -1,0 +1,104 @@
+.modal-containerAnx {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;    
+    background: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+.modalAnexos{
+    background-color: white;
+    width: 60%;
+    height: 70%;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    margin-top: 5%;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+}
+.modal-containerAnx.mostrar {
+    display: flex;
+}
+.tetoAnexos {
+    height: 7%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.tetoAnexos p {
+    margin: 0;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+.mostrar .modalAnexos {
+    animation: modal .1s;
+}
+.fecharAnexos {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 7%;
+    width: 5%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 0.5%;
+}
+#contentAnexos {
+    color: #525252;
+    font-weight: bold;
+    height: 7%;
+    margin-left: 2.5%;
+    font-size: 1.05rem;
+}
+.gridAnexos {
+    position: static; 
+    color: black;
+    background-color: #ffffff;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto; 
+    overflow: auto; 
+    border-collapse: collapse; 
+    border: 0.1rem solid  rgb(180, 180, 180);  
+    display: block;
+    height: 80%;
+}
+.cabecaAnexos {
+    height: 2rem;
+    background-color: #ffffff;
+    color: #EE4D4D;
+    width: 100%;
+    font-weight: bold;
+}
+.gridAnexos tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+#dadosAnexos tr {
+    height: 5rem;
+}
+.baixar {
+    width: 20%;
+}
+.nomeArq {
+    width: 30rem;
+}
+.desc {
+    width: 30rem;
+}
+
+.download {
+    width: 20rem;
+}

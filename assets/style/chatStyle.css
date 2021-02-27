@@ -1,0 +1,183 @@
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+.modalChat {
+    background-color: white;
+    width: 60%;
+    height: 80%;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+
+.tetoChat {
+    height: 2.5rem;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.tetoChat p {
+    margin: 0;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+.mostrar .modalChat {
+    animation: modal .1s;
+}
+
+.fecharChat {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 4rem;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 0.5%;
+}
+
+.gridChat {
+    position: static; 
+    color: black;
+    background-color: #ffffff;
+    width: 98%;
+    text-align: center;
+    margin: 0 auto; 
+    overflow: auto; 
+    border-collapse: collapse; 
+    border: 0.1rem solid  rgb(180, 180, 180);  
+    display: block;
+    height: 75%;
+}
+.gridChat a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+.gridChat img {
+    vertical-align: middle;
+}
+
+#conversas tr {
+    height: 3rem;
+}
+
+.cabecaChat {
+    height: 2rem;
+    background-color: #ffffff;
+    color: #EE4D4D;
+    width: 100%;
+    font-weight: bold;
+}
+.conteudoMSG {
+    width: 115rem;
+    font-size: 1.3rem;
+}
+#contentChat {
+    color: #525252;
+    font-weight: bold;
+    height: 5%;
+    margin-left: 1%;
+    font-size: 1.05rem;
+}
+#contentChat label {
+    padding-right: 5%;
+}
+.divMyMessage {
+    width: 50%;
+    float: right;
+    margin-right: 0.5%;    
+}
+.myMessage {
+    text-align: left;
+    border: 0.2rem solid #6fd9ff;
+    border-radius: 1rem 0 1rem 1rem;
+    padding: 1%;
+    color: rgb(43, 43, 43);
+    background-color: #6fd9ff;
+    float: right;
+    font-size: 1.2rem;
+    word-wrap: anywhere;
+    margin: 0;
+    clear: right;
+    white-space: pre-wrap;  
+}
+.divYouMessage {
+    width: 50%;
+    float: left;
+    margin-left: 0.5%;    
+}
+.youMessage {
+    text-align: left;
+    border: 0.2rem solid #333333;
+    border-radius: 0 1rem 1rem 1rem;
+    padding: 1%;
+    color: rgb(255, 255, 255);
+    background-color: #333333;
+    float: left;
+    font-size: 1.2rem;
+    word-wrap: anywhere;
+    margin: 0;
+    clear: left;
+    white-space: pre-wrap;
+}
+.divMessageContainer {
+    margin-top: 0.5%;
+    margin-left: 1%;
+}
+.messageText {
+    resize: none;
+    font-family: Optima, sans-serif;
+    border: 0.1rem solid rgb(180, 180, 180);
+    border-radius: 1rem;
+    width: 70%;
+    height: 1.2rem;
+    font-size: 1rem;
+    padding: 0.5%;  
+    
+}
+.messageFile {
+    display: none;
+
+}
+.imgMessageFile {
+    width: 4%;
+    height: 4%; 
+    cursor: pointer;
+    vertical-align: sub;
+}
+.btnSubmitMessage {
+    display: none;
+
+}
+.imgSubmitMessage {
+    width: 4%;
+    height: 4%; 
+    cursor: pointer;
+    vertical-align: sub;
+
+}
+#nameFile {
+    display: inline;
+    font-size: 0.9rem;
+}

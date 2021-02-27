@@ -1,0 +1,697 @@
+.titleName {
+    text-align: center;
+    color: #004cda;
+    font-size: 1.5rem;
+    margin-bottom: 1%;
+}
+
+.chAbertos {
+    margin-top: 7%;
+}
+
+.chAbertos table {
+    border-collapse: collapse;
+}
+
+.gridTI {
+    position: static;
+    top: 2rem;
+    color: black;
+    background-color: #ffffff;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);    
+    overflow: auto;
+    display: block;
+    height: 40rem;
+}
+.gridHistory {
+    height: 50rem;
+    width: 95%;
+    border-collapse: collapse;
+}
+.gridUser {
+    position: static;
+    top: 2rem;
+    color: black;
+    background-color: #ffffff;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);    
+    overflow: auto;
+    display: none;
+    height: 40rem;
+}
+.numero {
+    width: 4%;
+}
+.abertura {
+    width: 8%;
+}
+.assunto {
+    width: 12%;
+}
+.chat {
+    width: 5%;
+}
+.solicitante {
+    width: 10%;
+}
+.setor {
+    width: 8%;
+}
+.categoria {
+    width: 8%;
+}
+.status {
+    width: 11%;
+}
+.prioridade {
+    width: 6%;
+}
+.tecnico {
+    width: 8%;
+}
+.anexo {
+    width: 5%;
+}
+.acoes {
+    width: 5%;
+}
+.ordem {
+    width: 5%;
+}
+.dados tr {
+    height: 4rem;
+}
+
+.gridTI tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+.gridUser tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+.cabecaGrid {
+    height: 2rem;
+    background-color: #EE4D4D;
+    color: white;
+    width: 100%;
+}
+.dados a {
+    text-decoration: none;
+}
+.space {
+    padding: 0 1%;
+}
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background-color: white;
+    width: 34rem;
+    height: 14rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}  
+.modalAtribuir {
+    background-color: white;
+    width: 34rem;
+    height: 14rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+} 
+.modalFinali {
+    background-color: white;
+    width: 27rem;
+    height: 27rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+
+.obsResolverChamado {
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    width: 70%;
+}
+.btnEnvio {
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+}
+
+.teto {
+    height: 15%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.tetoFinali {
+    height: 10%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.tetoFinali p {
+    margin: 0;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.teto p {
+    margin: 0;
+    padding-top: 1.5%;
+    padding-left: 1%;
+}
+
+.modal form {
+    padding: 2%;
+    margin-top: 3%;
+}
+.modalAtribuir form {
+    padding: 2%;
+    margin-top: 2%;
+}
+.modalFinali form {
+    padding: 2%;
+    margin-top: 1%;
+}
+
+.modal select,
+input {
+    font-size: 0.9rem;
+}
+.modalAtribuir select,
+input {
+    font-size: 0.9rem;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10rem, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .modal {
+    animation: modal .1s;
+}
+.mostrar .modalAtribuir {
+    animation: modal .1s;
+}
+.mostrar .modalEdicao {
+    animation: modal .1s;
+}
+
+.mostrar .modalFinali {
+    animation: modal .1s;
+}
+
+.fechar {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 15%;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 1%;
+}
+
+.fecharFinali {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 10%;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 1%;
+}
+
+.modal-container.mostrar {
+    display: flex;
+}
+
+.modal-containerMais.mostrar {
+    display: flex;
+}
+
+.atualiza {
+    cursor: pointer;
+    position: static;
+    width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    margin-right: 2.5%;
+    margin-bottom: 0.5rem;
+    float: right;
+}
+
+.nvChamado {
+    cursor: pointer;
+    position: static;
+    font-size: 1rem;
+    margin-left: 2.5%;
+    margin-bottom: 0.5rem;
+    padding: 0.2%;
+}
+.nvChamado img{
+    width: 25%;
+    vertical-align: middle;
+}
+.dadosCH {
+    border: none;
+    outline: none;
+    display: inline;
+}
+
+.msgAviso {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 14%;
+}
+
+.msgAlerta {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 14%;
+}
+
+.msgFinal {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 28%;
+}
+
+.msgAlertaFinal {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 30%;
+}
+
+.userOptions {
+    display: inline;
+}
+
+.userOptions label {
+    margin-left: 1%;
+}
+
+.userOptions select {
+    width: 11%;
+    font-size: 100%;
+    cursor: pointer;
+}
+.userOptions select option{
+    cursor: pointer;
+}
+
+.check {
+    width: 1.1rem;
+    height: 1.1rem;
+    vertical-align: sub;
+    cursor: pointer;
+}
+.aberto {
+    border: solid 0.1rem rgb(139, 139, 139);
+}
+.atribuido {
+    background-color: #009a9e;
+    color: white;
+    padding: 4%;
+    font-size: 95%;
+}
+
+.atendimento {
+    background-color: #ffcf04;
+    color: black;
+    padding: 4%;
+    font-size: 95%;
+}
+.concluido {
+    background-color: #2a00bb;
+    color: white;
+    padding: 4%;
+    font-size: 95%;
+}
+
+.devolvido {
+    background-color: #ff7100;
+    color: white;
+    padding: 4%;
+    font-size: 95%;
+}
+.fechado {
+    background-color: #b1b1b1;
+    padding: 4%;
+    font-size: 95%;
+}
+.imediata {
+    background-color: rgb(255 24 24 / 80%);
+    color: white;
+    font-weight: bold;
+}
+
+.ver {
+    margin-bottom: 10%;
+}
+.imgChat {
+    width: 2rem;
+
+}
+.imgChatUser {
+    width: 2rem;
+
+}
+.msgAreaDevolver {
+    width: 85%;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+.modalFechar {
+    background-color: white;
+    width: 30rem;
+    height: 26rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+.modalDevolver {
+    background-color: white;
+    width: 35rem;
+    height: 14rem;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+.tetoFechar {
+    height: 10%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.tetoDevolver {
+    height: 15%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.tetoFechar p {
+    margin: 0;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.tetoDevolver p {
+    margin: 0;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.modalFechar form {
+    padding: 2%;
+    margin-top: 1%;
+}
+
+.modalDevolver form {
+    padding: 2%;
+    margin-top: 1%;
+}
+.mostrar .modalFechar {
+    animation: modal .1s;
+}
+
+.mostrar .modalDevolver {
+    animation: modal .1s;
+}
+.fecharResolv {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 10%;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 1%;
+}
+
+.fecharDev {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 15%;
+    width: 10%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 1%;
+}
+.msgFechar {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 28%;
+}
+
+.msgDev {
+    color: #004cda;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 15%;
+}
+
+.msgAlertaFechar {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 30%;
+}
+
+.msgAlertaDev {
+    color: red;
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 15%;
+}
+.ordem {
+    width: 5%;
+}
+.colocacao {
+    border: solid 0.3rem #089567;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    background: #089567;
+    color: white;
+    font-weight: bold;
+}
+.enviar {
+    font-family: Optima, sans-serif;
+    height: 2rem;
+    background-color: #EE4D4D;
+    color: white;
+    font-size: 1.1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    bottom: 2%;
+    right: 1.5%;
+}
+
+.enviar:hover {
+    background-color: #E40000;
+}
+.formCad {
+    color: #004cda;
+    font-size: 1.2rem;
+    width: 25%;
+    position: static;
+    margin-left: 2%;
+}
+.titleNameCat {
+    margin-left: 2%;
+    margin-top: 4%;
+    color: #004cda;
+    font-size: 1.5rem;
+}
+.btnEnviar {
+    font-family: Optima, sans-serif;
+    height: 2rem;
+    background-color: #EE4D4D;
+    color: white;
+    font-size: 1.1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    bottom: 2%;
+    right: 5%;
+}
+
+.btnEnviar:hover {
+    background-color: #E40000;
+}
+.campoT {
+    height: 1.5rem;
+    font-family: Optima, sans-serif;
+    font-size: 1rem;
+    width: 60%;
+    margin-left: 1%;
+}
+.campoTSmall {
+    height: 1.5rem;
+    font-family: Optima, sans-serif;
+    font-size: 1rem;
+    width: 20%;
+    margin-left: 1%;
+}
+.listCadastros {
+    margin-top: 10%;
+}
+.gridCadTipoArq {
+    position: static;
+    color: black;
+    background-color: #ffffff;
+    width: 55%;    
+    margin-left: 2%;
+    text-align: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+    height: 30rem;
+    overflow: auto;
+    display: block;
+    border-collapse: collapse;
+} 
+.gridCadTipoArq tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+.gridCadCategoria {
+    position: static;
+    color: black;
+    background-color: #ffffff;
+    width: 40%;    
+    margin-left: 2%;
+    text-align: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+    height: 30rem;
+    overflow: auto;
+    display: block;
+    border-collapse: collapse;
+}
+
+.gridCadCategoria tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+.cabecaGridCad {
+    background-color: #EE4D4D;
+    color: white;
+    width: 100%;
+}
+.cabecaGridCad td {
+    height: 2rem;
+}
+.descCat {
+    width: 35rem;
+}
+.acao {
+    width: 5rem;
+}
+.linhaCateg {
+    height: 2.5rem;
+}
+.btnAcao {
+    cursor: pointer;
+    height: 2.5rem;
+}
+.titleNamehHistory{
+    text-align: center;
+    margin-top: 4%;
+    color: #004cda;
+    font-size: 1.5rem;
+    margin-bottom: 1%;
+}
+.nota {
+    vertical-align: middle;
+    cursor: pointer;
+}
+.alerta {
+    color:#ff0000;
+    margin: 0;
+    margin-left: 22%;
+    font-size: 0.9rem;
+}
+
+
+
+

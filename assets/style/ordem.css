@@ -1,0 +1,106 @@
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+.modalOrdem{
+    background-color: white;
+    width: 60%;
+    height: 70%;
+    position: relative;
+    padding: 1rem;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+.modal-container.mostrar {
+    display: flex;
+}
+.tetoOrdem {
+    height: 7%;
+    background-color: #EE4D4D;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.tetoOrdem p {
+    margin: 0;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+.mostrar .modalOrdem {
+    animation: modal .1s;
+}
+.fecharOrdem {
+    position: absolute;
+    background-image: url("../img/fechar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 7%;
+    width: 5%;
+    border: 0;
+    color: white;
+    background-color: #EE4D4D;
+    margin-right: 0.5%;
+}
+
+.gridOrdem {
+    position: static; 
+    color: black;
+    background-color: #ffffff;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto; 
+    overflow: auto; 
+    border-collapse: collapse; 
+    border: 0.1rem solid  rgb(180, 180, 180);  
+    display: block;
+    height: 80%;
+    margin-top: 2%;
+}
+.cabecaOrdem {
+    height: 2rem;
+    background-color: #ffffff;
+    color: #EE4D4D;
+    width: 100%;
+    font-weight: bold;
+}
+.gridOrdem tr {
+    border-bottom: 0.1rem solid rgb(180, 180, 180);
+}
+#dadosOrdem tr {
+    height: 3rem;
+}
+.pos {
+    width: 10rem;
+}
+.num {
+    width: 10rem;
+}
+
+.hor {
+    width: 25rem;
+}
+
+.sol {
+    width: 25rem;
+}
+.emAtd {
+    background-color:  #FFF37C;
+
+}
+.meuChamado {    
+    background-color: #d2d2d2;
+    font-weight: bold;
+}
