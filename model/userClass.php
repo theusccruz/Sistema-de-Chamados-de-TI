@@ -37,15 +37,11 @@
 
 			$stms = $conn->prepare($sql);
 			$stms->execute();
-
 			$linha = $stms->fetch(PDO::FETCH_ASSOC);
 			
 			return $linha;
 
 		}
-
 	}	
-		
-
 
 ?>
