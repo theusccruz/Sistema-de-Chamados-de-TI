@@ -17,20 +17,18 @@
 			$stms->execute();
 
 			$linha = $stms->fetch(PDO::FETCH_ASSOC);
-			if ($linha > 0 ) {				
-				$_SESSION['IDUSUARIO'] = $linha['ID'];
-				$_SESSION['SETOR_ID'] = $linha['SETOR_ID'];
-				$_SESSION['NOME'] = $linha['NOME'];
+
+			if ($linha > 0) {				
+				$_SESSION['IDUSUARIO'] = $linha['id'];
+				$_SESSION['SETOR_ID'] = $linha['setor_id'];
+				$_SESSION['NOME'] = $linha['nome'];
 				return $linha;	
 
-			} else {			
-
+			} else {					
 				return false;
-
 			}
 
-		}
-		
+		}		
 
 		public static function dadosUsuario() {
 
