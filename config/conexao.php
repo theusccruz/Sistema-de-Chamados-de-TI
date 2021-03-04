@@ -1,9 +1,9 @@
 <?php
 
 if(!isset($_SESSION['IDUSUARIO'])) {
-	session_set_cookie_params(["Secure" => "true"]);
+	// session_set_cookie_params(["Secure" => "true"]);
 	session_set_cookie_params(["SameSite" => "Strict"]);
-	// session_set_cookie_params(["HttpOnly" => "true"]);
+	session_set_cookie_params(["HttpOnly" => "true"]);
 	session_start();
 } 
 
