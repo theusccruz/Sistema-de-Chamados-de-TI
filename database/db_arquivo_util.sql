@@ -483,7 +483,6 @@ end
 
 SET TERM ; ^
 
-
 --RESET DB
 
 delete from anexo_msg;
