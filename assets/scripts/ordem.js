@@ -23,7 +23,6 @@ function ordem(objeto) {
         fetch('../model/selUsuariosGrid.php', {
 
                 method: 'GET'
-
             })
             .then(response => {
                 response.json()
