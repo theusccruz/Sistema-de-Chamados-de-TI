@@ -63,17 +63,17 @@ async function requestFetchWithPost(url, config) {
 
 function gridUser(resultado, botao, color, acao, posicao) {
 
-    const grid = "<tr><td id='numero'>" + resultado.ID +
-        '</td><td>' + resultado.DATA_ABERTURA +
-        '<br>' + resultado.HORA_ABERTURA +
-        '</td><td>' + resultado.ASSUNTO +
-        '</td><td>' + resultado.CATEGORIA +
-        "</td><td class='space'><p class='" + color + "'>" + resultado.STATUS +
-        '</p></td><td>' + resultado.ID_TECNICO +
+    const grid = "<tr><td id='numero'>" + resultado.id +
+        '</td><td>' + resultado.data_abertura +
+        '<br>' + resultado.hora_abertura +
+        '</td><td>' + resultado.assunto +
+        '</td><td>' + resultado.categoria +
+        "</td><td class='space'><p class='" + color + "'>" + resultado.status +
+        '</p></td><td>' + resultado.id_tecnico +
         '</td><td>' + botao +
 
-        '</td><td>' + "<a href='#' id='" + resultado.ID + "' onclick='chat(this);' name='" +
-        resultado.ID + "'><img class='imgChatUser' src='../assets/img/chat.png'></a>" +
+        '</td><td>' + "<a href='#' id='" + resultado.id + "' onclick='chat(this);' name='" +
+        resultado.id + "'><img class='imgChatUser' src='../assets/img/chat.png'></a>" +
 
         acao + "<td>" + posicao + "</td></tr>"
 
@@ -82,18 +82,18 @@ function gridUser(resultado, botao, color, acao, posicao) {
 
 function gridTI(dados, prioriClass, btnAcoes, btnVer, classStatus) {
 
-    const grid = "<tr class='" + prioriClass + "'><td id='numero'>" + dados.ID +
-        '</td><td>' + dados.DATA_ABERTURA +
-        '<br>' + dados.HORA_ABERTURA +
-        '</td><td>' + dados.ASSUNTO +
-        '</td><td>' + dados.ID_DEPARTAMENTO +
-        '</td><td>' + dados.ID_SOLICITANTE +
-        '</td><td>' + dados.CATEGORIA +
-        "<td>" + dados.PRIORIDADE + "</td>" +
-        "</td><td class='space'><p class='" + classStatus + "'>" + dados.STATUS +
-        "</p></td>" + '<td>' + dados.ID_TECNICO + "</td>" +
+    const grid = "<tr class='" + prioriClass + "'><td id='numero'>" + dados.id +
+        '</td><td>' + dados.data_abertura +
+        '<br>' + dados.hora_abertura +
+        '</td><td>' + dados.assunto +
+        '</td><td>' + dados.id_departamento +
+        '</td><td>' + dados.id_solicitante +
+        '</td><td>' + dados.categoria +
+        "<td>" + dados.prioridade + "</td>" +
+        "</td><td class='space'><p class='" + classStatus + "'>" + dados.status +
+        "</p></td>" + '<td>' + dados.id_tecnico + "</td>" +
 
-        "<td>" + "<a href='#' id='" + dados.ID + "' onclick='chat(this);' name='" + dados.ID +
+        "<td>" + "<a href='#' id='" + dados.id + "' onclick='chat(this);' name='" + dados.id +
         "'><img class='imgChat' src='../assets/img/chat.png'></a>" + "</td>" +
 
         btnVer + "<td>" + btnAcoes + "</td>" + "</tr>";
@@ -103,38 +103,38 @@ function gridTI(dados, prioriClass, btnAcoes, btnVer, classStatus) {
 
 function gridHistory(dados, btnVer, classStatus, setor) {
     if (setor != 3) {
-        const grid = "<tr><td id='numero'>" + dados.ID +
-            '</td><td>' + dados.DATA_ABERTURA +
-            '<br>' + dados.HORA_ABERTURA +
-            '</td><td>' + dados.DATA_FECHAMENTO +
-            '<br>' + dados.HORA_FECHAMENTO +
-            '</td><td>' + dados.ASSUNTO +
-            '</td><td>' + dados.ID_DEPARTAMENTO +
-            '</td><td>' + dados.ID_SOLICITANTE +
-            '</td><td>' + dados.CATEGORIA +
-            "<td>" + dados.PRIORIDADE + "</td>" +
-            "</td><td class='space'><p class='" + classStatus + "'>" + dados.STATUS +
-            "</p></td>" + '<td>' + dados.ID_TECNICO + "</td>" + btnVer +
+        const grid = "<tr><td id='numero'>" + dados.id +
+            '</td><td>' + dados.data_abertura +
+            '<br>' + dados.hora_abertura +
+            '</td><td>' + dados.data_fechamento +
+            '<br>' + dados.hora_fechamento +
+            '</td><td>' + dados.assunto +
+            '</td><td>' + dados.id_departamento +
+            '</td><td>' + dados.id_departamento +
+            '</td><td>' + dados.categoria +
+            "<td>" + dados.prioridade + "</td>" +
+            "</td><td class='space'><p class='" + classStatus + "'>" + dados.status +
+            "</p></td>" + '<td>' + dados.id_tecnico + "</td>" + btnVer +
 
-            "<td>" + "<a href='#' id='" + dados.ID + "' onclick='chat(this);' name='" + dados.ID +
+            "<td>" + "<a href='#' id='" + dados.id + "' onclick='chat(this);' name='" + dados.id +
             "'><img class='imgChatUser' src='../assets/img/chat.png'></a>" + "</td></tr>";
         return grid
     } else {
-        const grid = "<tr><td id='numero'>" + dados.ID +
-            '</td><td>' + dados.DATA_ABERTURA +
-            '<br>' + dados.HORA_ABERTURA +
-            '</td><td>' + dados.DATA_FECHAMENTO +
-            '<br>' + dados.HORA_FECHAMENTO +
-            '</td><td>' + dados.ASSUNTO +
-            '</td><td>' + dados.ID_DEPARTAMENTO +
-            '</td><td>' + dados.ID_SOLICITANTE +
-            '</td><td>' + dados.CATEGORIA +
-            "<td>" + dados.PRIORIDADE + "</td>" +
-            "</td><td class='space'><p class='" + classStatus + "'>" + dados.STATUS +
-            "</p></td>" + '<td>' + dados.ID_TECNICO + "</td>" +
-            "<td>" + dados.AVALIACAO + "</td>" + btnVer +
+        const grid = "<tr><td id='numero'>" + dados.id +
+            '</td><td>' + dados.data_abertura +
+            '<br>' + dados.hora_abertura +
+            '</td><td>' + dados.data_fechamento +
+            '<br>' + dados.hora_fechamento +
+            '</td><td>' + dados.assunto +
+            '</td><td>' + dados.id_departamento +
+            '</td><td>' + dados.id_departamento +
+            '</td><td>' + dados.categoria +
+            "<td>" + dados.prioridade + "</td>" +
+            "</td><td class='space'><p class='" + classStatus + "'>" + dados.status +
+            "</p></td>" + '<td>' + dados.id_tecnico + "</td>" +
+            "<td>" + dados.avaliacao + "</td>" + btnVer +
 
-            "<td>" + "<a href='#' id='" + dados.ID + "' onclick='chat(this);' name='" + dados.ID +
+            "<td>" + "<a href='#' id='" + dados.id + "' onclick='chat(this);' name='" + dados.id +
             "'><img class='imgChat' src='../assets/img/chat.png'></a>" + "</td></tr>";
         return grid
     }

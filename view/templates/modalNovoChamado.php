@@ -18,7 +18,7 @@
                 <?php
                 $conn = Database::getConnection();
 
-                $sql = "SELECT * FROM CATEGORIA order BY ID";
+                $sql = "SELECT * FROM CATEGORIA order BY descr";
 
                 $stms = $conn->prepare($sql);
                 $stms->execute();

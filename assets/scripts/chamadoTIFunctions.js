@@ -25,15 +25,15 @@ async function getAllChamados() {
             chamadoFormat = chamados.map(retornoChamado => {
                 users.forEach(retornoUsuario => {
 
-                    if (retornoUsuario.ID == retornoChamado.ID_SOLICITANTE) {
-                        retornoChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                        retornoChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+                    if (retornoUsuario.id== retornoChamado.id_solicitante) {
+                        retornoChamado.id_solicitante = retornoUsuario.nome;
+                        retornoChamado.id_departamento = retornoUsuario.setor;
                     }
-                    if (retornoUsuario.ID == retornoChamado.ID_TECNICO) {
-                        retornoChamado.ID_TECNICO = retornoUsuario.NOME;
+                    if (retornoUsuario.id== retornoChamado.id_tecnico) {
+                        retornoChamado.id_tecnico = retornoUsuario.nome;
                     }
-                    if (userSession.IDUSUARIO == retornoUsuario.ID) {
-                        userSession.IDUSUARIO = retornoUsuario.NOME;
+                    if (userSession.IDUSUARIO == retornoUsuario.id) {
+                        userSession.IDUSUARIO = retornoUsuario.nome;
                     }
 
                 })
@@ -47,27 +47,26 @@ async function getAllChamados() {
                 resultado.data_abertura = formatarData(resultado.data_abertura);
                 resultado.hora_abertura = formatarHora(resultado.hora_abertura);
 
-                if (resultado.PRIORIDADE === null || resultado.ID_TECNICO === null) {
-                    resultado.ID_TECNICO = "";
-                    resultado.PRIORIDADE = "";
+                if (resultado.prioridade === null || resultado.id_tecnico === null) {
+                    resultado.id_tecnico = "";
+                    resultado.prioridade = "";
                 }
 
-                let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.ID + "' style='cursor: pointer;'>Ver</button></td>";
-                let btnAtribuir = "<button id='assumir' onclick='atribuirChamado(this);' value='" + resultado.ID + 
+                let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.id + "' style='cursor: pointer;'>Ver</button></td>";
+                let btnAtribuir = "<button id='assumir' onclick='atribuirChamado(this);' value='" + resultado.id + 
                     "' name='assumir' style='cursor: pointer;'>Atribuir</button>";   
 
-                let btnAtender = "<button id='atender' onclick='atender(this);' value='" + resultado.ID + 
+                let btnAtender = "<button id='atender' onclick='atender(this);' value='" + resultado.id + 
                 "' name='atender' style='cursor: pointer; margin-bottom: 10%;'>Atender</button>" + btnAtribuir;
-                let btnFinalizar = "<button id='finalizar' onclick='finalizar(this);' value='" + resultado.ID +
+                let btnFinalizar = "<button id='finalizar' onclick='finalizar(this);' value='" + resultado.id +
                 "' name='finalizar' style='cursor: pointer; margin-bottom: 10%;'>Concluir</button>" + btnAtribuir;
-                if (resultado.ID_TECNICO != userSession.IDUSUARIO) {
+                if (resultado.id_tecnico != userSession.IDUSUARIO) {
                     btnAtender = btnAtribuir;
-
                     btnFinalizar = btnAtribuir;
                 }
 
                 let prioriClass;
-                if (resultado.ID_PRIORIDADE == 6) {
+                if (resultado.id_prioridade == 6) {
                     prioriClass = "imediata";
                 } else {
                     prioriClass = "";
@@ -75,9 +74,9 @@ async function getAllChamados() {
 
                 switch (userOptions.value) {
                     case "1":
-                        switch (resultado.ID_STATUS) {
+                        switch (resultado.id_status) {
                             case 5:
-                                resultado.STATUS = "Aguardando retorno";
+                                resultado.status = "Aguardando retorno";
                                 dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtribuir, btnVer, "concluido"));
                                 break;
 
@@ -100,32 +99,32 @@ async function getAllChamados() {
                         break;
 
                     case "2":
-                        if (resultado.ID_STATUS == 2) {
+                        if (resultado.id_status == 2) {
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtribuir, btnVer, ""));
                         }
                         break;
 
                     case "3":
-                        if (resultado.ID_STATUS == 3) {
+                        if (resultado.id_status == 3) {
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtender, btnVer, "atribuido"));
                         }
                         break;
 
                     case "4":
-                        if (resultado.ID_STATUS == 4) {
+                        if (resultado.id_status == 4) {
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnFinalizar, btnVer, "atendimento"));
                         }
                         break;
 
                     case "5":
-                        if (resultado.ID_STATUS == 5) {
-                            resultado.STATUS = "Aguardando retorno";
+                        if (resultado.id_status == 5) {
+                            resultado.status = "Aguardando retorno";
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtribuir, btnVer, "concluido"));
                         }
                         break;
 
                     case "6":
-                        if (resultado.ID_STATUS == 6) {
+                        if (resultado.id_status == 6) {
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtender, btnVer, "devolvido"));
                         }
                         break;
@@ -147,22 +146,20 @@ async function getAllChamados() {
 
                 users.forEach(retornoUsuario => {
 
-                    if (retornoUsuario.ID == retornoChamado.ID_SOLICITANTE) {
+                    if (retornoUsuario.id == retornoChamado.id_solicitante) {
 
-                        retornoChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                        retornoChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+                        retornoChamado.id_solicitante = retornoUsuario.nome;
+                        retornoChamado.id_departamento = retornoUsuario.setor;
                     }
 
-                    if (retornoUsuario.ID == retornoChamado.ID_TECNICO) {
+                    if (retornoUsuario.id == retornoChamado.id_tecnico) {
 
-                        retornoChamado.ID_TECNICO = retornoUsuario.NOME;
-
+                        retornoChamado.id_tecnico = retornoUsuario.nome;
                     }
 
-                    if (userSession.IDUSUARIO == retornoUsuario.ID) {
+                    if (userSession.IDUSUARIO == retornoUsuario.id) {
 
-                        userSession.IDUSUARIO = retornoUsuario.NOME;
-
+                        userSession.IDUSUARIO = retornoUsuario.nome;
                     }
 
                 })
@@ -172,20 +169,20 @@ async function getAllChamados() {
 
             chamadoFormat.forEach(resultado => {
                 //console.log(resultado);
-                resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-                resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
+                resultado.data_abertura = formatarData(resultado.data_abertura);
+                resultado.hora_abertura = formatarHora(resultado.hora_abertura);
 
-                let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.ID + "' style='cursor: pointer;'>Ver</button></td>";
-                let btnAtribuir = "<button id='assumir' onclick='atribuirChamado(this);' value='" + resultado.ID + 
+                let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.id + "' style='cursor: pointer;'>Ver</button></td>";
+                let btnAtribuir = "<button id='assumir' onclick='atribuirChamado(this);' value='" + resultado.id + 
                     "' name='assumir' style='cursor: pointer;'>Atribuir</button>";
                 
-                let btnAtender = "<button id='atender' onclick='atender(this);' value='" + resultado.ID + 
+                let btnAtender = "<button id='atender' onclick='atender(this);' value='" + resultado.id + 
                     "' name='atender' style='cursor: pointer; margin-bottom: 10%;'>Atender</button>" + btnAtribuir;
-                let btnFinalizar = "<button id='finalizar' onclick='finalizar(this);' value='" + resultado.ID +
+                let btnFinalizar = "<button id='finalizar' onclick='finalizar(this);' value='" + resultado.id +
                 "' name='finalizar' style='cursor: pointer; margin-bottom: 10%;'>Concluir</button>" + btnAtribuir;
 
                 let prioriClass;
-                if (resultado.ID_PRIORIDADE == 6) {
+                if (resultado.id_prioridade == 6) {
                     prioriClass = "imediata";
                 } else {
                     prioriClass = "";
@@ -193,9 +190,9 @@ async function getAllChamados() {
 
                 switch (userOptions.value) {
                     case "1":
-                        switch (resultado.ID_STATUS) {
+                        switch (resultado.id_status) {
                             case 5:
-                                resultado.STATUS = "Aguardando retorno";
+                                resultado.status = "Aguardando retorno";
                                 dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtribuir, btnVer, "concluido"));
                                 break;
 
@@ -221,27 +218,27 @@ async function getAllChamados() {
                         break;
 
                     case "3":
-                        if (resultado.ID_STATUS == 3) {
+                        if (resultado.id_status == 3) {
 
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtender, btnVer, "atribuido"));
                         }
                         break;
 
                     case "4":
-                        if (resultado.ID_STATUS == 4) {
+                        if (resultado.id_status == 4) {
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnFinalizar, btnVer, "atendimento"));
                         }
                         break;
 
                     case "5":
-                        if (resultado.ID_STATUS == 5) {
-                            resultado.STATUS = "Aguardando retorno";
+                        if (resultado.id_status == 5) {
+                            resultado.status = "Aguardando retorno";
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtribuir, btnVer, "concluido"));
                         }
                         break;
 
                     case "6":
-                        if (resultado.ID_STATUS == 6) {
+                        if (resultado.id_status == 6) {
                             dadosGridTI.insertAdjacentHTML("beforeend", gridTI(resultado, prioriClass, btnAtender, btnVer, "devolvido"));
                         }
                         break;
@@ -263,9 +260,9 @@ async function getAllChamados() {
 
                 users.forEach(retornoUsuario => {
 
-                    if (retornoUsuario.ID == retornoChamado.ID_TECNICO) {
+                    if (retornoUsuario.id == retornoChamado.id_tecnico) {
 
-                        retornoChamado.ID_TECNICO = retornoUsuario.NOME;
+                        retornoChamado.id_tecnico = retornoUsuario.nome;
 
                     }
                 })
@@ -275,39 +272,33 @@ async function getAllChamados() {
 
             chamadosFormat.forEach(resultado => {
                 //console.log(resultado)
-                resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-                resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
+                resultado.data_abertura = formatarData(resultado.data_abertura);
+                resultado.hora_abertura = formatarHora(resultado.hora_abertura);
 
                 let posicao = "";
                 chamadosOrdenados.forEach(colocacao => {
 
-                    if (colocacao.ID === resultado.ID) {
-                        posicao = colocacao.ORDEM;
+                    if (colocacao.id === resultado.ID) {
+                        posicao = colocacao.ordem;
                     }
 
                 })
 
-                let ordem = "<a id='" + resultado.ID + "' onclick='ordem(this)' class='colocacao'>" + posicao + "</a>"
+                let ordem = "<a id='" + resultado.id + "' onclick='ordem(this)' class='colocacao'>" + posicao + "</a>";
 
-                if (resultado.DATA_FECHAMENTO === null && resultado.HORA_FECHAMENTO === null) {
+                if (resultado.id_tecnico === null) {
 
-                    resultado.DATA_FECHAMENTO = ""
-                    resultado.HORA_FECHAMENTO = ""
+                    resultado.id_tecnico = ""
                 }
 
-                if (resultado.ID_TECNICO === null) {
-
-                    resultado.ID_TECNICO = ""
-                }
-
-                let btnVer = "<button class='ver' onclick='detalhes(this);' value='" + resultado.ID +
+                let btnVer = "<button class='ver' onclick='detalhes(this);' value='" + resultado.id +
                     "' style='cursor: pointer;'>Ver</button>";
 
                 let acao;
-                if (resultado.ID_STATUS == 5) {
+                if (resultado.id_status == 5) {
 
-                    acao = "<td><button onclick='fechar(this);' value='" + resultado.ID + "' style='cursor: pointer; margin-bottom: 5%;'>Resolvido</button><br>" +
-                        "<button onclick='devolver(this)' value='" + resultado.ID + "' style='cursor: pointer;'>Não Resolvido</button></td>"
+                    acao = "<td><button onclick='fechar(this);' value='" + resultado.id + "' style='cursor: pointer; margin-bottom: 5%;'>Resolvido</button><br>" +
+                        "<button onclick='devolver(this)' value='" + resultado.id + "' style='cursor: pointer;'>Não Resolvido</button></td>"
 
                 } else {
 
@@ -316,7 +307,7 @@ async function getAllChamados() {
                 }
                 switch (userOptions.value) {
                     case "1":
-                        switch (resultado.ID_STATUS) {
+                        switch (resultado.id_status) {
                             case 5:
                                 dadosGridUser.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "concluido", acao, ""));
                                 break;
@@ -339,27 +330,27 @@ async function getAllChamados() {
                         }
                         break;
                     case "2":
-                        if (resultado.ID_STATUS == 2) {
+                        if (resultado.id_status == 2) {
                             dadosGridUser.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "", acao, ordem));
                         }
                         break;
                     case "3":
-                        if (resultado.ID_STATUS == 3) {
+                        if (resultado.id_status == 3) {
                             dadosGridUser.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "atribuido", acao, ordem));
                         }
                         break;
                     case "4":
-                        if (resultado.ID_STATUS == 4) {
+                        if (resultado.id_status == 4) {
                             dadosGridUser.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "atendimento", acao, ""));
                         }
                         break;
                     case "5":
-                        if (resultado.ID_STATUS == 5) {
+                        if (resultado.id_status == 5) {
                             dadosGridUser.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "concluido", acao, ""));
                         }
                         break;
                     case "6":
-                        if (resultado.ID_STATUS == 6) {
+                        if (resultado.id_status == 6) {
                             dadosGridUser.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "devolvido", acao, ""));
                         }
                         break;                

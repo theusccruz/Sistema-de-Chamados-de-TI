@@ -484,3 +484,16 @@ end
 SET TERM ; ^
 
 
+--RESET DB
+
+delete from anexo_msg;
+delete from interacao;
+delete from mensagem;
+delete from anexos;
+delete from chamados;
+
+ALTER SEQUENCE anexo_msg_id_seq RESTART WITH 1;
+ALTER SEQUENCE anexos_id_seq RESTART WITH 1;
+ALTER SEQUENCE interacao_id_seq RESTART WITH 1;
+ALTER SEQUENCE mensagem_id_seq RESTART WITH 1;
+ALTER SEQUENCE chamados_id_seq RESTART WITH 1;
