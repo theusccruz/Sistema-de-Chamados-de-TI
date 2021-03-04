@@ -68,9 +68,9 @@ if (isset($_SESSION['IDUSUARIO'])) {
 								<option value="1">Mostrar todos</option>
 
 								<?php
-								$conn = Database::getConnection2();
+								$conn = Database::getConnection();
 
-								$sql = "SELECT * FROM STATUS";
+								$sql = "SELECT * FROM STATUS ORDER BY id";
 
 								$stms = $conn->prepare($sql);
 								$stms->execute();
@@ -79,9 +79,9 @@ if (isset($_SESSION['IDUSUARIO'])) {
 
 								if (Count($status)) {
 									foreach ($status as $sts) :
-										if ($sts['ID'] !== 7) :
+										if ($sts['id'] !== 7) :
 								?>
-											<option id="optSts" value="<?php echo $sts['ID']; ?>"> <?php echo $sts['DESCR']; ?> </option>
+											<option id="optSts" value="<?php echo $sts['id']; ?>"> <?php echo $sts['descr']; ?> </option>
 								<?php
 										endif;
 									endforeach;

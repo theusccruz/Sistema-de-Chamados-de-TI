@@ -17,7 +17,7 @@
 							Categoria: <select class="" id="catAtr" name="categoria" required>
 
 								<?php
-								$conn = Database::getConnection2();
+								$conn = Database::getConnection();
 
 								$sql = "SELECT * FROM CATEGORIA order BY ID";
 
@@ -39,7 +39,7 @@
 							Prioridade: <select class="" id="prioAtr" name="prioridade" required>
 								<option></option>
 								<?php
-								$conn = Database::getConnection2();
+								$conn = Database::getConnection();
 
 								$sql = "SELECT * FROM PRIORIDADE";
 

@@ -16,7 +16,7 @@
 
                 <option></option>
                 <?php
-                $conn = Database::getConnection2();
+                $conn = Database::getConnection();
 
                 $sql = "SELECT * FROM CATEGORIA order BY ID";
 
