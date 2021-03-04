@@ -116,7 +116,7 @@ body {
 /* --CABEÇALHO-- */
 
 .cabeca {
-    background: linear-gradient(to right, #E14141, #BF3E3E);
+    background: linear-gradient(to left, #2268fd, #24b0e7);
     color: white;
     height: 5%;
     font-size: 0.8rem;
