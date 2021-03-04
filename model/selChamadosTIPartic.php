@@ -12,7 +12,7 @@
 
 	//DADOS DO USUÁRIO
     $dado = Usuario::dadosUsuario();
-    $idUser = $dado['ID'];
+    $idUser = $dado['id'];
 
 
 	$sql =

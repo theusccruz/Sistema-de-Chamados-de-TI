@@ -44,8 +44,8 @@ async function getAllChamados() {
             chamadoFormat.forEach(resultado => {
                 //console.log(resultado);
 
-                resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-                resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
+                resultado.data_abertura = formatarData(resultado.data_abertura);
+                resultado.hora_abertura = formatarHora(resultado.hora_abertura);
 
                 if (resultado.PRIORIDADE === null || resultado.ID_TECNICO === null) {
                     resultado.ID_TECNICO = "";

@@ -7,8 +7,8 @@
 	//DADOS DO USUÁRIO
 	$dado = Usuario::dadosUsuario();
 
-	$idUser = $dado['ID'];
-	$setorUser = $dado['SETOR_ID'];	
+	$idUser = $dado['id'];
+	$setorUser = $dado['setor_id'];	
 
 	$sql = 
 	"SELECT

@@ -1,15 +1,7 @@
 <?php
-
-
-	session_start();
-	
+	session_start();	
 	header('Content-Type: application/json');
-
-	//require '../config/conexao.php';
-
 	require '../model/userClass.php';
-
-
 	//conexão
 	$conn = Database::getConnection();
 
@@ -30,9 +22,8 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 
 		//variaveis de usuario da sessão
 		$dado = Usuario::dadosUsuario();
-
-		$idUser = $dado['ID'];
-		$setorUser = $dado['SETOR_ID'];	
+		$idUser = $dado['id'];
+		$setorUser = $dado['setor_id'];	
 
 		//tratamento do INSERT em CHAMADOS
 		$sql = "INSERT INTO CHAMADOS 
@@ -57,20 +48,13 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		$stms->bindValue(':DTA', $data);
 		$stms->execute();
 
-
 		$id = $stms->fetch(PDO::FETCH_ASSOC);
-
-
 		$linha = $stms->fetchAll(PDO::FETCH_ASSOC);
-			if ($linha > 1) {				
-					
-				echo json_encode($id);	
-
-			} else {			
-
-				echo json_encode("Dados NÃO");
-
-			}
+		if ($linha > 1) {
+			echo json_encode($id);
+		} else {	
+			echo json_encode("Dados NÃO");
+		}
 
 			
 		//INSERT EM INTERAÇÕES
@@ -88,7 +72,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		$stms->bindValue(':MSG', $msg);
 		$stms->bindValue(':DATA', $data);
 		$stms->bindValue(':HORA', $time);
-		$stms->bindValue(':CHINT', $id['ID']);
+		$stms->bindValue(':CHINT', $id['id']);
 		$stms->bindValue(':TPUSER', $tipoUsuarioInt);
 		$stms->execute();
 		
@@ -106,7 +90,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		$stms->bindValue(':CONT', $msg);
 		$stms->bindValue(':DATA', $data);
 		$stms->bindValue(':HORA', $time);
-		$stms->bindValue(':CHAM_ID', $id['ID']);
+		$stms->bindValue(':CHAM_ID', $id['id']);
 		$stms->bindValue(':ATR_ID', $idUser);
 		$stms->bindValue(':TIPOUSER', $tipoUsuario);
 		$stms->execute();
@@ -147,8 +131,8 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 
 							foreach ($lineSql as $line) {
 
-								if ($line['EXTENSAO'] == $extensao) {
-									$idExtensao = $line['ID'];		
+								if ($line['extensao'] == $extensao) {
+									$idExtensao = $line['id'];		
 								} else {
 								}	
 							}
@@ -160,7 +144,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 
 
 							$stms = $conn->prepare($sql);
-							$stms->bindValue(':CHM_ID', $id['ID']);
+							$stms->bindValue(':CHM_ID', $id['id']);
 							$stms->bindValue(':TANX_ID', $idExtensao);
 							$stms->bindValue(':ARQ', $arquivo);
 							$stms->bindValue(':DESCR', $descArquivo);

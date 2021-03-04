@@ -29,7 +29,7 @@
                     foreach ($categoria as $categ) {
 
                 ?>
-                    <option value="<?php echo $categ['ID']; ?>"> <?php echo $categ['DESCR']; ?> </option>
+                    <option value="<?php echo $categ['id']; ?>"> <?php echo $categ['descr']; ?> </option>
                 <?php
                     }
                 }
