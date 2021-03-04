@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 require '../model/userClass.php';
 
 //conexão
-$conn = Database::getConnection2();
+$conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 

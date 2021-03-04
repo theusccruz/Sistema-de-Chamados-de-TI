@@ -3,7 +3,7 @@
     require '../model/functions.php';
 
 	//conexão
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
     if (!isset($_GET['id'])) {
         $sql = "SELECT * FROM CATEGORIA ORDER BY ID";

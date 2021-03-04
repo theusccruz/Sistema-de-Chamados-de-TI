@@ -9,7 +9,7 @@
     require '../model/functions.php';
 
 
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
 	$id = $_GET['id'];
 

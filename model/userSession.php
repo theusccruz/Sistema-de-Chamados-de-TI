@@ -8,7 +8,7 @@
 	require '../model/userClass.php';
 
 	//conexão
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 	
 
 	//variaveis de usuario da sessão

@@ -8,7 +8,7 @@
 
 
 	//conexão
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
 
     $sql = 

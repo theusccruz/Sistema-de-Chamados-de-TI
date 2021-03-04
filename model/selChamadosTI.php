@@ -3,7 +3,7 @@
 	require '../model/userClass.php';
 
 
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
 	$sql = 
     "SELECT

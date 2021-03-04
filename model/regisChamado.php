@@ -11,7 +11,7 @@
 
 
 	//conexão
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
 if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 	echo json_encode("Dados Invalidos");

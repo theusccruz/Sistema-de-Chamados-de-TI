@@ -8,7 +8,7 @@
 	require '../model/userClass.php';
 
 
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
 	//DADOS DO USUÁRIO
     $dado = Usuario::dadosUsuario();

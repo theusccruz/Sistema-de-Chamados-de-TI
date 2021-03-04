@@ -5,8 +5,6 @@ include('../config/conexao.php');
 if (isset($_SESSION['IDUSUARIO'])) {
 	session_regenerate_id(true);
 	if ($_SESSION['SETOR_ID'] === 3) {
-
-
 ?>
 		<!DOCTYPE html>
 		<html lang="pt-br">

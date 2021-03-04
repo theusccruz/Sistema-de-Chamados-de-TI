@@ -4,7 +4,7 @@ session_start();
 header('Content-Type: application/json');
 require '../model/userClass.php';
 
-$conn = Database::getConnection2();
+$conn = Database::getConnection();
 
 $sql = "SELECT
             CH.id, CH.id_solicitante, CH.id_departamento, CH.ID_TECNICO, CH.assunto, CH.ID_STATUS, CH.ID_PRIORIDADE,

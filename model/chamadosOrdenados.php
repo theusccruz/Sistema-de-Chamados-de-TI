@@ -5,7 +5,7 @@
 
 	require '../model/userClass.php';
 
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 	$sql = "SELECT
 				CH.id, CH.id_status, STS.DESCR, PRIORI.DESCR, CH.id_solicitante, CH.id_departamento, CH.ID_TECNICO, CH.assunto, CAT.descr AS categoria,
 				STS.descr AS status, PRIORI.DESCR AS prioridade, 

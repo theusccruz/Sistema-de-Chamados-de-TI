@@ -2,7 +2,7 @@
 	require '../model/userClass.php';
 	$id = $_GET['id'];
 	//conexão
-	$conn = Database::getConnection2();
+	$conn = Database::getConnection();
 
 
     $sql = 

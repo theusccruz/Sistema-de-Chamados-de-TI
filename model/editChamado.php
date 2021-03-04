@@ -9,7 +9,7 @@ require '../model/userClass.php';
 require '../model/functions.php';
 
 //conexão
-$conn = Database::getConnection2();
+$conn = Database::getConnection();
 
 
 //variaveis de usuario da sessão
