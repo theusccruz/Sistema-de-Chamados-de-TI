@@ -1,16 +1,14 @@
 <?php
-	session_start();	
-	header('Content-Type: application/json');
-	require '../model/userClass.php';
-	//conexão
-	$conn = Database::getConnection();
+session_start();
+header('Content-Type: application/json');
+require '../model/userClass.php';
+//conexão
+$conn = Database::getConnection();
 
 if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 	echo json_encode("Dados Invalidos");
-	
-
 } else {
-	      
+
 	//variaveis do POST
 	$desc = $_POST['desc'];
 	$cat = $_POST['cat'];
@@ -23,7 +21,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		//variaveis de usuario da sessão
 		$dado = Usuario::dadosUsuario();
 		$idUser = $dado['id'];
-		$setorUser = $dado['setor_id'];	
+		$setorUser = $dado['setor_id'];
 
 		//tratamento do INSERT em CHAMADOS
 		$sql = "INSERT INTO CHAMADOS 
@@ -31,7 +29,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 			VALUES 
 		(:ID_SOL, :ID_DEP, :DESCR, :ID_CAT, :ID_STS, :HRA, :DTA) returning ID";
 
-			
+
 		date_default_timezone_set('America/Sao_Paulo');
 
 		$data = date("Y.m.d");
@@ -52,11 +50,11 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		$linha = $stms->fetchAll(PDO::FETCH_ASSOC);
 		if ($linha > 1) {
 			echo json_encode($id);
-		} else {	
+		} else {
 			echo json_encode("Dados NÃO");
 		}
 
-			
+
 		//INSERT EM INTERAÇÕES
 		$sql5 = "INSERT INTO INTERACAO
 			(AUTOR_ID, EVENTO, MENSAGEM, DATA, HORA, TIPO_USUARIO, CHAMADOS_ID)
@@ -75,7 +73,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		$stms->bindValue(':CHINT', $id['id']);
 		$stms->bindValue(':TPUSER', $tipoUsuarioInt);
 		$stms->execute();
-		
+
 
 		//tratamento do INSERT em MENSAGEM
 		$sql = "INSERT INTO MENSAGEM 
@@ -85,7 +83,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 
 		$tipoUsuario = "Solicitante";
 
-		
+
 		$stms = $conn->prepare($sql);
 		$stms->bindValue(':CONT', $msg);
 		$stms->bindValue(':DATA', $data);
@@ -99,9 +97,9 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 
 			if (is_uploaded_file($_FILES['arquivo']['tmp_name'][0])) {
 				//FILES
-				$fileCount = count($_FILES['arquivo']['tmp_name']); 
+				$fileCount = count($_FILES['arquivo']['tmp_name']);
 
-				for ($i=0; $i < $fileCount; $i++) { 
+				for ($i = 0; $i < $fileCount; $i++) {
 
 					if (is_uploaded_file($_FILES['arquivo']['tmp_name'][$i])) {
 
@@ -118,7 +116,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 							} else {
 								$descArquivo = $_POST['descArquivo'][$i];
 							}
-							
+
 							//TIPO DO ANEXO
 							$idExtensao = 1;
 							$extensao = pathinfo($nome, PATHINFO_EXTENSION);
@@ -132,9 +130,9 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 							foreach ($lineSql as $line) {
 
 								if ($line['extensao'] == $extensao) {
-									$idExtensao = $line['id'];		
+									$idExtensao = $line['id'];
 								} else {
-								}	
+								}
 							}
 							//tratamento do INSERT em ANEXOS
 							$sql = "INSERT INTO ANEXOS 
@@ -150,16 +148,12 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 							$stms->bindValue(':DESCR', $descArquivo);
 							$stms->bindValue(':NMARQ', $nome);
 							$stms->bindValue(':TPARQ', $tipo);
-							$stms->execute(); 
-							
-						} 
+							$stms->execute();
+						}
 					}
 				}
-					
 			}
-
 		} else {
-
 		}
 	}
 }

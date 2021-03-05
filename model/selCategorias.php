@@ -38,4 +38,3 @@
             echo json_encode("Err");
         }        
     }
-?>
