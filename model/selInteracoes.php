@@ -16,7 +16,7 @@
         MENSAGEM, DATA, HORA, CHAMADOS_ID 
     FROM INTERACAO
         WHERE CHAMADOS_ID = :ID
-    ORDER BY INTERACAO.ID";
+    ORDER BY interacao.id";
 
     $stms = $conn->prepare($sql);
         $stms->bindValue(':ID', $id);

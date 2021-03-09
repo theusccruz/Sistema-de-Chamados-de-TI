@@ -2,6 +2,8 @@
 session_start();
 header('Content-Type: application/json');
 require '../model/userClass.php';
+require 'Blob.php';
+
 //conexão
 $conn = Database::getConnection();
 
@@ -94,7 +96,6 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 		$stms->execute();
 
 		if (isset($_FILES['arquivo'])) {
-
 			if (is_uploaded_file($_FILES['arquivo']['tmp_name'][0])) {
 				//FILES
 				$fileCount = count($_FILES['arquivo']['tmp_name']);
@@ -105,7 +106,7 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 
 						if ($_FILES['arquivo']["size"][$i] <= 26214500) {
 							//ANEXO
-							$arquivo = file_get_contents($_FILES['arquivo']["tmp_name"][$i]);
+							$arquivo = $_FILES['arquivo']["tmp_name"][$i];
 							$nome = $_FILES['arquivo']["name"][$i];
 							$tipo = $_FILES['arquivo']["type"][$i];
 							$tamanho = $_FILES['arquivo']["size"][$i];
@@ -134,26 +135,32 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 								} else {
 								}
 							}
+							//$data = realpath($_FILES['arquivo']["tmp_name"][$i]);
 							//tratamento do INSERT em ANEXOS
-							$sql = "INSERT INTO ANEXOS 
-								(CHAMADO_ID, TIPOANEXO_ID, ARQUIVO, DESCR, NOME_ARQ, TIPO_ARQ)
-							VALUES 
-								(:CHM_ID, :TANX_ID, :ARQ, :DESCR, :NMARQ, :TPARQ) returning ID";
+							// $sql = "INSERT INTO ANEXOS 
+							// 	(CHAMADO_ID, TIPOANEXO_ID, ARQUIVO, DESCR, NOME_ARQ, TIPO_ARQ)
+							// VALUES 
+							// 	(:CHM_ID, :TANX_ID, :ARQ, :DESCR, :NMARQ, :TPARQ)";							
 
+							// $stms = $conn->prepare($sql);
+							// $stms->bindValue(':CHM_ID', $id['id']);
+							// $stms->bindValue(':TANX_ID', $idExtensao);
+							// $stms->bindValue(':ARQ', $data);
+							// $stms->bindValue(':DESCR', $descArquivo);
+							// $stms->bindValue(':NMARQ', $nome);
+							// $stms->bindValue(':TPARQ', $tipo);
+							// $stms->execute();
 
-							$stms = $conn->prepare($sql);
-							$stms->bindValue(':CHM_ID', $id['id']);
-							$stms->bindValue(':TANX_ID', $idExtensao);
-							$stms->bindValue(':ARQ', $arquivo);
-							$stms->bindValue(':DESCR', $descArquivo);
-							$stms->bindValue(':NMARQ', $nome);
-							$stms->bindValue(':TPARQ', $tipo);
-							$stms->execute();
+							//echo json_encode(realpath($_FILES['arquivo']["tmp_name"][$i]));
+
+							$blob = new DBblob;
+
+							$blob->insert($conn, $id['id'], $idExtensao, $arquivo, $descArquivo, $nome, $tipo);
+
 						}
 					}
 				}
 			}
-		} else {
-		}
+		} 
 	}
 }
