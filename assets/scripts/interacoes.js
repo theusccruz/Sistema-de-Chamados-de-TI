@@ -57,27 +57,27 @@ function detalhes(objeto) {
 
                             dadosUsuario.forEach(retornoUsuario => {
 
-                                if (retornoUsuario.ID == dadosChamado.ID_SOLICITANTE) {
+                                if (retornoUsuario.id == dadosChamado.id_solicitante) {
 
-                                    dadosChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                                    dadosChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+                                    dadosChamado.id_solicitante = retornoUsuario.nome;
+                                    dadosChamado.id_departamento = retornoUsuario.setor;
                                 }
 
-                                if (retornoUsuario.ID == dadosChamado.ID_TECNICO) {
+                                if (retornoUsuario.id == dadosChamado.id_tecnico) {
 
-                                    dadosChamado.ID_TECNICO = retornoUsuario.NOME;
+                                    dadosChamado.id_tecnico = retornoUsuario.nome;
                                 }
 
                             })
                             
-                            numInt.innerHTML = dadosChamado.ID;
-                            solicInt.innerHTML = dadosChamado.ID_SOLICITANTE;
-                            catInt.innerHTML = dadosChamado.CATEGORIA;
-                            stsInt.innerHTML = dadosChamado.STATUS;
-                            tecInt.innerHTML = dadosChamado.ID_TECNICO;
+                            numInt.innerHTML = dadosChamado.id;
+                            solicInt.innerHTML = dadosChamado.id_solicitante;
+                            catInt.innerHTML = dadosChamado.categoria;
+                            stsInt.innerHTML = dadosChamado.status;
+                            tecInt.innerHTML = dadosChamado.id_tecnico;
 
-                            if (dadosChamado.ANX != null) {
-                                iconAnexo.innerHTML =  "<a class='anx' onclick='anexos(this)' id='" + dadosChamado.ID + "'><img src='../assets/img/anx.png'></a>";
+                            if (dadosChamado.anx != null) {
+                                iconAnexo.innerHTML =  "<a class='anx' onclick='anexos(this)' id='" + dadosChamado.id + "'><img src='../assets/img/anx.png'></a>";
                             } else {
 
                             }
@@ -117,9 +117,9 @@ function detalhes(objeto) {
 
                             dadosUsuario.forEach(retornoUsuario => {
 
-                                if (retornoUsuario.ID == retornoIntera.AUTOR_ID) {
+                                if (retornoUsuario.id == retornoIntera.autor_id) {
                                     
-                                    retornoIntera.AUTOR_ID = retornoUsuario.NOME;
+                                    retornoIntera.autor_id = retornoUsuario.nome;
 
                                 }
                             })
@@ -130,34 +130,34 @@ function detalhes(objeto) {
                         //console.log(interacao)
 
                         interacao.forEach(dados => {
-                            dados.DATA = formatarData(dados.DATA);
-                            dados.HORA = formatarHora(dados.HORA);
+                            dados.data = formatarData(dados.data);
+                            dados.hora = formatarHora(dados.hora);
 
-                            if (dados.MENSAGEM === null) {
+                            if (dados.mensagem === null) {
 
-                                dados.MENSAGEM = "";
+                                dados.mensagem = "";
                             }
 
-                            if (dados.MENSAGEM.length > 95) {
+                            if (dados.mensagem.length > 95) {
                                 
-                                var mensagemInt = dados.MENSAGEM.substr(0, 70) + "...<a href='#' class='vmais' name='" + dados.NUMAUTOR 
-                                + "' onclick='mais(this)' id='" + dados.ID
+                                var mensagemInt = dados.mensagem.substr(0, 70) + "...<a href='#' class='vmais' name='" + dados.numautor 
+                                + "' onclick='mais(this)' id='" + dados.id
                                 + "'>Ver mais</a>";
 
                                 //console.log(mensagemInt);
 
                             } else {
 
-                                var mensagemInt = dados.MENSAGEM;
+                                var mensagemInt = dados.mensagem;
                             }
 
-                            interacoes.insertAdjacentHTML("beforeend", "<tr><td>" + dados.DATA + 
-                            "<br>" + dados.HORA + "</td>" +
-                            "<td>" + dados.AUTOR_ID + "</td>" +
-                            "<td>" + dados.EVENTO + "</td>" +
+                            interacoes.insertAdjacentHTML("beforeend", "<tr><td>" + dados.data + 
+                            "<br>" + dados.hora + "</td>" +
+                            "<td>" + dados.autor_id + "</td>" +
+                            "<td>" + dados.evento + "</td>" +
                             "<td>" + mensagemInt + "</td></tr>");
 
-                            //console.log(dados.MENSAGEM.length);                        
+                            //console.log(dados.mensagem.length);                        
                             
                             
 
@@ -225,16 +225,16 @@ function mais(objet) {
 
                             dadosUsuario.forEach(retornoUsuario => {
 
-                                if (retornoUsuario.ID == dadosMais.AUTOR_ID) {
+                                if (retornoUsuario.ID == dadosMaisretornoIntera.autor_id) {
                                     
-                                    dadosMais.AUTOR_ID = retornoUsuario.NOME;
+                                    dadosMais.autor_id = retornoUsuario.nome;
 
                                 }
                             });
                             
-                            maisChamado.innerHTML = dadosMais.CHAMADOS_ID;
-                            maisAutor.innerHTML = dadosMais.AUTOR_ID;
-                            maisMensagem.innerHTML = dadosMais.MENSAGEM;  
+                            maisChamado.innerHTML = dadosMais.chamados_id;
+                            maisAutor.innerHTML = dadosMais.autor_id;
+                            maisMensagem.innerHTML = dadosMais.mensagem;  
 
                     })
                 })
