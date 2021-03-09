@@ -63,7 +63,7 @@ CREATE TABLE ANEXOS (
     ID            SERIAL PRIMARY KEY,
     CHAMADO_ID    INTEGER REFERENCES CHAMADOS (ID) ON UPDATE CASCADE,
     TIPOANEXO_ID  INTEGER REFERENCES TIPO_ANEXO (ID) ON UPDATE CASCADE,
-    ARQUIVO       BYTEA,
+    ARQUIVO       OID,
     DESCR         VARCHAR(500),
     NOME_ARQ      VARCHAR(500),
     TIPO_ARQ      VARCHAR(500)
@@ -490,6 +490,7 @@ delete from interacao;
 delete from mensagem;
 delete from anexos;
 delete from chamados;
+delete from pg_largeobject;
 
 ALTER SEQUENCE anexo_msg_id_seq RESTART WITH 1;
 ALTER SEQUENCE anexos_id_seq RESTART WITH 1;
