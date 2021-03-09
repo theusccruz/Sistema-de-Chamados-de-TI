@@ -164,7 +164,7 @@
 
 .teto {
     height: 15%;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-weight: bold;
     margin-bottom: 1%;
@@ -172,7 +172,7 @@
 
 .tetoFinali {
     height: 10%;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-weight: bold;
     margin-bottom: 1%;
@@ -249,7 +249,7 @@ input {
     width: 10%;
     border: 0;
     color: white;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     margin-right: 1%;
 }
 
@@ -265,7 +265,7 @@ input {
     width: 10%;
     border: 0;
     color: white;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     margin-right: 1%;
 }
 
@@ -438,7 +438,7 @@ input {
 }
 .tetoFechar {
     height: 10%;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-weight: bold;
     margin-bottom: 1%;
@@ -446,7 +446,7 @@ input {
 
 .tetoDevolver {
     height: 15%;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-weight: bold;
     margin-bottom: 1%;
@@ -491,7 +491,7 @@ input {
     width: 10%;
     border: 0;
     color: white;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     margin-right: 1%;
 }
 
@@ -507,7 +507,7 @@ input {
     width: 10%;
     border: 0;
     color: white;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     margin-right: 1%;
 }
 .msgFechar {
@@ -557,7 +557,7 @@ input {
 .enviar {
     font-family: Optima, sans-serif;
     height: 2rem;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-size: 1.1rem;
     border: 0;
@@ -570,7 +570,7 @@ input {
 }
 
 .enviar:hover {
-    background-color: #E40000;
+    background-color: #001c9b;
 }
 .formCad {
     color: #004cda;
@@ -588,7 +588,7 @@ input {
 .btnEnviar {
     font-family: Optima, sans-serif;
     height: 2rem;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-size: 1.1rem;
     border: 0;
@@ -601,7 +601,7 @@ input {
 }
 
 .btnEnviar:hover {
-    background-color: #E40000;
+    background-color: #001c9b;
 }
 .campoT {
     height: 1.5rem;
@@ -654,7 +654,7 @@ input {
     border-bottom: 0.1rem solid rgb(180, 180, 180);
 }
 .cabecaGridCad {
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     width: 100%;
 }

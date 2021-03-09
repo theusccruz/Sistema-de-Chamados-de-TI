@@ -25,7 +25,7 @@
 }
 .tetoEditTipoArquivo {
     height: 2.5rem;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-weight: bold;
     margin-bottom: 1%;
@@ -50,7 +50,7 @@
     width: 10%;
     border: 0;
     color: white;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     margin-right: 0.5%;
 }
 .formEditTipoArquivo {
@@ -64,7 +64,7 @@
 .btnEditarTA {
     font-family: Optima, sans-serif;
     height: 2rem;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-size: 1.1rem;
     border: 0.1rem solid black;
@@ -76,7 +76,7 @@
 }
 
 .btnEditarTA:hover {
-    background-color: #E40000;
+    background-color: #001c9b;
 }
 .msgTipoArquivo {
     color: #004cda;

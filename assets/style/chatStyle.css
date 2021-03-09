@@ -24,7 +24,7 @@
 
 .tetoChat {
     height: 2.5rem;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     color: white;
     font-weight: bold;
     margin-bottom: 1%;
@@ -52,7 +52,7 @@
     width: 4rem;
     border: 0;
     color: white;
-    background-color: #EE4D4D;
+    background-color: #2268fd;
     margin-right: 0.5%;
 }
 
@@ -85,7 +85,7 @@
 .cabecaChat {
     height: 2rem;
     background-color: #ffffff;
-    color: #EE4D4D;
+    color: #2268fd;
     width: 100%;
     font-weight: bold;
 }
