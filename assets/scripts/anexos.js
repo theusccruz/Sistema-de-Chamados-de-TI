@@ -34,7 +34,7 @@ function anexos(objeto) {
             .then(dadosChamado => {
                 //console.log(dadosChamado);
 
-                    numCH.innerHTML = dadosChamado.ID;
+                    numCH.innerHTML = dadosChamado.id;
                     
             })
         })
@@ -52,17 +52,17 @@ function anexos(objeto) {
 
                 dadosAnexos.forEach(result => {
 
-                    if (result.DESCR == null) {
+                    if (result.descr == null) {
 
-                        result.DESCR = "";
+                        result.descr = "";
                         
                     } else {
                         
                     }
 
-                    anx.insertAdjacentHTML("beforeend", "<tr><td>" + result.DESCR +
-                     "</td><td>" + result.NOME_ARQ + 
-                     "</td><td>" + "<a href = '../model/baixarAnexo.php?id=" + result.ID +
+                    anx.insertAdjacentHTML("beforeend", "<tr><td>" + result.descr +
+                     "</td><td>" + result.nome_arq + 
+                     "</td><td>" + "<a href = '../model/baixarAnexo.php?id=" + result.id +
                      "'><img class='baixar' src='../assets/img/baixar3.png'></a></td></tr>" )
 
                     
