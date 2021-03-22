@@ -46,9 +46,9 @@ async function conversasFunction(id) {
 
         users.forEach(retornoUsuario => {
 
-            if (retornoUsuario.ID == retornoChat.AUTOR_ID) {
+            if (retornoUsuario.id == retornoChat.autor_id) {
 
-                retornoChat.AUTOR_ID = retornoUsuario.NOME;
+                retornoChat.autor_id = retornoUsuario.nome;
 
             }
 
@@ -60,16 +60,16 @@ async function conversasFunction(id) {
     chat.forEach(mensagem => {
         //console.log(mensagem);
 
-        mensagem.HORA = formatarHora(mensagem.HORA);
-        mensagem.DATA = formatarData(mensagem.DATA);
+        mensagem.hora = formatarHora(mensagem.hora);
+        mensagem.data = formatarData(mensagem.data);
 
-        if (userSession.IDUSUARIO == mensagem.NUMAUTOR) {
+        if (userSession.IDUSUARIO == mensagem.numautor) {
             divClassStyle = 'divMyMessage';
             pClassStyle = 'myMessage';
 
         } else {
-            if ((userSession.SETOR_ID == 3 && mensagem.TIPO_USUARIO == "Tecnico") &&
-                userSession.IDUSUARIO != chamado.ID_SOLICITANTE) { // setor 3 é o setor de TI
+            if ((userSession.SETOR_ID == 3 && mensagem.tipo_usuario == "Tecnico") &&
+                userSession.IDUSUARIO != chamado.id_solicitante) { // setor 3 é o setor de TI
                 divClassStyle = 'divMyMessage';
                 pClassStyle = 'myMessage';
             } else {
@@ -80,24 +80,24 @@ async function conversasFunction(id) {
 
         let file;
 
-        if (mensagem.ARQ == null) {
+        if (mensagem.arq == null) {
             file = "";
         } else {
             file = "<tr><td><div class='" + divClassStyle + "'><p class='" + pClassStyle + "'>" +
-                "<label style= 'font-size: small'>" + mensagem.AUTOR_ID + "<br></label>" + mensagem.NOME_ARQ +
-                "<br><a href='../model/baixarAnexoMSG.php?id=" + mensagem.ARQ + "'>" +
+                "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" + mensagem.nome_ARQ +
+                "<br><a href='../model/baixarAnexoMSG.php?id=" + mensagem.arq + "'>" +
                 "Baixar anexo <img src='../assets/img/downAnxMsg.png'>" +
-                "</a><br><label style= 'font-size: small'>" + mensagem.HORA + " " + mensagem.DATA + "<label></p></div></td></tr>";
+                "</a><br><label style= 'font-size: small'>" + mensagem.hora + " " + mensagem.data + "<label></p></div></td></tr>";
         }
 
         let message;
 
-        if (mensagem.CONTEUDO == "Anexo") {
+        if (mensagem.conteudo == "Anexo") {
             message = "";
         } else {
             message = "<tr><td><div class='" + divClassStyle + "'><p class='" + pClassStyle + "'>" +
-                "<label style= 'font-size: small'>" + mensagem.AUTOR_ID + "<br></label>" +
-                mensagem.CONTEUDO + "<br><label style= 'font-size: small'>" + mensagem.HORA + " " + mensagem.DATA +
+                "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" +
+                mensagem.conteudo + "<br><label style= 'font-size: small'>" + mensagem.hora + " " + mensagem.data +
                 "</label></p></div></td></tr>";
         }
         conversas.insertAdjacentHTML("beforeend", message + file);
@@ -138,9 +138,9 @@ async function chat(objeto) {
         messageText.focus();
 
         nameFile.innerHTML = "max: 25MB";        
-        numCht.innerHTML = chamado.ID;
+        numCht.innerHTML = chamado.id;
         criptId.value = chamado[0];
-        campoId.value = chamado.ID;
+        campoId.value = chamado.id;
 
         let pClassStyle;
         let divClassStyle;
@@ -149,9 +149,9 @@ async function chat(objeto) {
 
             users.forEach(retornoUsuario => {
 
-                if (retornoUsuario.ID == retornoChat.AUTOR_ID) {
+                if (retornoUsuario.id == retornoChat.autor_id) {
 
-                    retornoChat.AUTOR_ID = retornoUsuario.NOME;
+                    retornoChat.autor_id = retornoUsuario.nome;
 
                 }
 
@@ -163,16 +163,16 @@ async function chat(objeto) {
         chat.forEach(mensagem => {
             //console.log(mensagem);
 
-            mensagem.HORA = formatarHora(mensagem.HORA);
-            mensagem.DATA = formatarData(mensagem.DATA);
+            mensagem.hora = formatarHora(mensagem.hora);
+            mensagem.data = formatarData(mensagem.data);
 
-            if (userSession.IDUSUARIO == mensagem.NUMAUTOR) {
+            if (userSession.IDUSUARIO == mensagem.numautor) {
                 divClassStyle = 'divMyMessage';
                 pClassStyle = 'myMessage';
 
             } else {
-                if ((userSession.SETOR_ID == 3 && mensagem.TIPO_USUARIO == "Tecnico") &&
-                    userSession.IDUSUARIO != chamado.ID_SOLICITANTE) { // setor 3 é o setor de TI
+                if ((userSession.SETOR_ID == 3 && mensagem.tipo_usuario == "Tecnico") &&
+                    userSession.IDUSUARIO != chamado.id_solicitante) { // setor 3 é o setor de TI
                     divClassStyle = 'divMyMessage';
                     pClassStyle = 'myMessage';
                 } else {
@@ -183,24 +183,24 @@ async function chat(objeto) {
 
             let file;
 
-            if (mensagem.ARQ == null) {
+            if (mensagem.arq == null) {
                 file = "";
             } else {
                 file = "<tr><td><div class='" + divClassStyle + "'><p class='" + pClassStyle + "'>" +
-                    "<label style= 'font-size: small'>" + mensagem.AUTOR_ID + "<br></label>" + mensagem.NOME_ARQ +
-                    "<br><a href='../model/baixarAnexoMSG.php?id=" + mensagem.ARQ + "'>" +
+                    "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" + mensagem.nome_ARQ +
+                    "<br><a href='../model/baixarAnexoMSG.php?id=" + mensagem.arq + "'>" +
                     "Baixar anexo <img src='../assets/img/downAnxMsg.png'>" +
-                    "</a><br><label style= 'font-size: small'>" + mensagem.HORA + " " + mensagem.DATA + "<label></p></div></td></tr>";
+                    "</a><br><label style= 'font-size: small'>" + mensagem.hora + " " + mensagem.data + "<label></p></div></td></tr>";
             }
 
             let message;
 
-            if (mensagem.CONTEUDO == "Anexo") {
+            if (mensagem.conteudo == "Anexo") {
                 message = "";
             } else {
                 message = "<tr><td><div class='" + divClassStyle + "'><p class='" + pClassStyle + "'>" +
-                    "<label style= 'font-size: small'>" + mensagem.AUTOR_ID + "<br></label>" +
-                    mensagem.CONTEUDO + "<br><label style= 'font-size: small'>" + mensagem.HORA + " " + mensagem.DATA +
+                    "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" +
+                    mensagem.conteudo + "<br><label style= 'font-size: small'>" + mensagem.hora + " " + mensagem.data +
                     "</label></p></div></td></tr>";
             }
 

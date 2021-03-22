@@ -19,7 +19,7 @@
 								<?php
 								$conn = Database::getConnection();
 
-								$sql = "SELECT * FROM CATEGORIA order BY ID";
+								$sql = "SELECT * FROM categoria order BY id";
 
 								$stms = $conn->prepare($sql);
 								$stms->execute();
@@ -30,7 +30,7 @@
 									foreach ($categoria as $categ) {
 
 								?>
-										<option id="optCateg" value="<?php echo $categ['ID']; ?>"> <?php echo $categ['DESCR']; ?> </option>
+										<option id="optCateg" value="<?php echo $categ['id']; ?>"> <?php echo $categ['descr']; ?> </option>
 								<?php
 									}
 								}
@@ -41,7 +41,7 @@
 								<?php
 								$conn = Database::getConnection();
 
-								$sql = "SELECT * FROM PRIORIDADE";
+								$sql = "SELECT * FROM prioridade";
 
 								$stms = $conn->prepare($sql);
 								$stms->execute();
@@ -52,7 +52,7 @@
 									foreach ($categoria as $categ) {
 
 								?>
-										<option value="<?php echo $categ['ID']; ?>"> <?php echo $categ['DESCR']; ?> </option>
+										<option value="<?php echo $categ['id']; ?>"> <?php echo $categ['descr']; ?> </option>
 								<?php
 									}
 								}

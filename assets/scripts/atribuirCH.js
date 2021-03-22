@@ -38,10 +38,10 @@ async function atribuirChamado(objeto) {
         let userSession = await requestFetchWithGet('../model/userSession.php');
 
         tecnicos.forEach(tecnico => {
-            if (tecnico.ID != chamados.ID_SOLICITANTE) {
+            if (tecnico.id != chamados.id_solicitante) {
                 let nameTecnico = document.createElement('option');
-                nameTecnico.setAttribute('value', tecnico.ID);
-                nameTecnico.innerHTML = tecnico.NOME;
+                nameTecnico.setAttribute('value', tecnico.id);
+                nameTecnico.innerHTML = tecnico.nome;
 
                 if (userSession.IDUSUARIO == nameTecnico.value) {
                     nameTecnico.setAttribute('selected', 'true')
@@ -52,29 +52,29 @@ async function atribuirChamado(objeto) {
         });
 
         contentAtribuir.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" +
-            chamados.ID + "' size='10' readonly='true'>" + "<input type='text' name='cript' value='" +
+            chamados.id + "' size='10' readonly='true'>" + "<input type='text' name='cript' value='" +
             chamados[0] + "' hidden>" +
             "Assunto: <input class='dadosCH' type='text' name='assunto' value='" +
-            chamados.ASSUNTO + "' size='26' readonly='true'>" +
+            chamados.assunto + "' size='26' readonly='true'>" +
             "<br><br>");
 
-        statAtr.value = chamados.STATUS;
+        statAtr.value = chamados.status;
 
         for (var i = 0; i < catAtr.length; i++) {
-            if (catAtr[i].value == chamados.IDCAT) {
-                catAtr.value = chamados.IDCAT;
+            if (catAtr[i].value == chamados.idcat) {
+                catAtr.value = chamados.idcat;
             }
         }
 
         for (var i = 0; i < prioAtr.length; i++) {
-            if (prioAtr[i].value == chamados.IDPRIORI) {
-                prioAtr.value = chamados.IDPRIORI;
+            if (prioAtr[i].value == chamados.idpriori) {
+                prioAtr.value = chamados.idpriori;
             }
         }
 
         for (var i = 0; i < tecAtr.length; i++) {
-            if (tecAtr[i].value == chamados.ID_TECNICO) {
-                tecAtr.value = chamados.ID_TECNICO;
+            if (tecAtr[i].value == chamados.id_tecnico) {
+                tecAtr.value = chamados.id_tecnico;
             }
         }
 

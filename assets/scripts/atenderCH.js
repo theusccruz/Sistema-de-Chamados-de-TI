@@ -43,19 +43,19 @@ function atender(objeto) {
                     //console.log(statusEdicao);
 
 
-                        contentAtender.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.ID +
+                        contentAtender.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.id +
                             "' size='10' readonly='true'>" + "<input type='text' name='cript' value='" 
-                            + dadosChamado[0] + "' hidden>" + "Assunto: <input type='text' class='dadosCH' name='' value='" + dadosChamado.ASSUNTO +
+                            + dadosChamado[0] + "' hidden>" + "Assunto: <input type='text' class='dadosCH' name='' value='" + dadosChamado.assunto +
                             "' size='26' readonly='true'><br><br>");
 
-                        statAt.value = dadosChamado.STATUS;
+                        statAt.value = dadosChamado.status;
 
 
                         for (var i = 0; i < catAt.length; i++) {
 
-                            if (catAt[i].value == dadosChamado.IDCAT) {
+                            if (catAt[i].value == dadosChamado.idcat) {
 
-                                catAt.value = dadosChamado.IDCAT;
+                                catAt.value = dadosChamado.idcat;
 
                             }
 
@@ -63,9 +63,9 @@ function atender(objeto) {
 
                         for (var i = 0; i < prioAt.length; i++) {
 
-                            if (prioAt[i].value == dadosChamado.IDPRIORI) {
+                            if (prioAt[i].value == dadosChamado.idpriori) {
 
-                                prioAt.value = dadosChamado.IDPRIORI;
+                                prioAt.value = dadosChamado.idpriori;
 
                             }
 

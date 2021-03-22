@@ -57,11 +57,11 @@ if ($cript != geraHash($id)) {
 
 		$linha = $stms->fetch(PDO::FETCH_ASSOC);
 
-		$idCateg = $linha['CATEGORIA'];
-		$idStatus = $linha['STATUS'];
-		$idPriori = $linha['PRIORIDADE'];
-		$idTecnico = $linha['ID_TECNICO'];
-		$final = $linha['FINALIZADO'];
+		$idCateg = $linha['categoria'];
+		$idStatus = $linha['status'];
+		$idPriori = $linha['prioridade'];
+		$idTecnico = $linha['id_tecnico'];
+		$final = $linha['finalizado'];
 
 		if ($final == "NAO") {
 
@@ -71,7 +71,7 @@ if ($cript != geraHash($id)) {
 
 				$sql2 =
 					"UPDATE chamados CH SET
-							CH.id_status = :STS
+							id_status = :STS
 							WHERE CH.ID = :ID";
 
 
@@ -112,10 +112,10 @@ if ($cript != geraHash($id)) {
 
 				$sql2 =
 					"UPDATE chamados CH SET
-								CH.id_tecnico = :TI,
-								CH.id_categoria = :CAT,
-								CH.id_status = :STS,
-								CH.id_prioridade = :PRIORI
+								id_tecnico = :TI,
+								id_categoria = :CAT,
+								id_status = :STS,
+								id_prioridade = :PRIORI
 							WHERE CH.ID = :ID";
 
 
@@ -163,7 +163,7 @@ if ($cript != geraHash($id)) {
 
 				$sql2 =
 					"UPDATE chamados CH SET
-									CH.id_status = :STS
+									id_status = :STS
 									WHERE CH.ID = :ID";
 
 

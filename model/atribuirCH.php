@@ -11,7 +11,7 @@ $connUsers = Database::getConnection();
 $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -55,10 +55,10 @@ if ($cript != geraHash($id)) {
 
         $linha = $stms->fetch(PDO::FETCH_ASSOC);
 
-        $idCateg = $linha['CATEGORIA'];
-        $idStatus = $linha['STATUS'];
-        $idPriori = $linha['PRIORIDADE'];
-        $idtecnico = $linha['ID_TECNICO'];
+        $idCateg = $linha['categoria'];
+        $idStatus = $linha['status'];
+        $idPriori = $linha['prioridade'];
+        $idtecnico = $linha['id_tecnico'];
 
         //atribuir um chamado
 
@@ -70,10 +70,10 @@ if ($cript != geraHash($id)) {
 
                 if ($idStatus == 2) {
                     $sql2 = "UPDATE chamados CH SET
-                            CH.id_tecnico = :TI,
-                            CH.id_status = :STS,
-                            CH.id_prioridade = :PRIORI
-                        WHERE CH.ID = :ID";
+                            id_tecnico = :TI,
+                            id_status = :STS,
+                            id_prioridade = :PRIORI
+                        WHERE CH.id = :ID";
 
                     $stms = $conn->prepare($sql2);
                     $stms->bindValue(':TI', $tecnico);
@@ -91,9 +91,9 @@ if ($cript != geraHash($id)) {
                 } else {
 
                     $sql2 = "UPDATE chamados CH SET
-                            CH.id_tecnico = :TI,
-                            CH.id_prioridade = :PRIORI
-				        WHERE CH.ID = :ID";
+                            id_tecnico = :TI,
+                            id_prioridade = :PRIORI
+				        WHERE CH.id = :ID";
 
                     $stms = $conn->prepare($sql2);
                     $stms->bindValue(':TI', $tecnico);
@@ -119,7 +119,7 @@ if ($cript != geraHash($id)) {
                 if ($idUser == $tecnico) {
                     $evento = "Atribuiu o chamado a si mesmo";
                 } else {
-                    $evento = "Atribuiu o chamado ao técnico " . $usersTI['NOME'];
+                    $evento = "Atribuiu o chamado ao técnico " . $usersTI['nome'];
                 }
                 $tipoUsuarioInt = "Tecnico";
 
@@ -139,11 +139,11 @@ if ($cript != geraHash($id)) {
 
                 if ($idStatus == 2) {
                     $sql2 = "UPDATE chamados CH SET
-                            CH.id_tecnico = :TI,
-                            CH.id_categoria = :CAT,
-                            CH.id_status = :STS,
-                            CH.id_prioridade = :PRIORI
-				        WHERE CH.ID = :ID";
+                            id_tecnico = :TI,
+                            id_categoria = :CAT,
+                            id_status = :STS,
+                            id_prioridade = :PRIORI
+				        WHERE CH.id = :ID";
 
                     $stms = $conn->prepare($sql2);
                     $stms->bindValue(':TI', $idUser);
@@ -161,10 +161,10 @@ if ($cript != geraHash($id)) {
                     }
                 } else {
                     $sql2 = "UPDATE chamados CH SET
-                            CH.id_tecnico = :TI,
-                            CH.id_categoria = :CAT,
-                            CH.id_prioridade = :PRIORI
-                        WHERE CH.ID = :ID";
+                            id_tecnico = :TI,
+                            id_categoria = :CAT,
+                            id_prioridade = :PRIORI
+                        WHERE CH.id = :ID";
 
                     $stms = $conn->prepare($sql2);
                     $stms->bindValue(':TI', $idUser);
@@ -191,7 +191,7 @@ if ($cript != geraHash($id)) {
                 if ($idUser == $tecnico) {
                     $evento = "Atribuiu o chamado a si mesmo";
                 } else {
-                    $evento = "Atribuiu o chamado ao técnico " . $usersTI['NOME'];
+                    $evento = "Atribuiu o chamado ao técnico " . $usersTI['nome'];
                 }
                 $tipoUsuarioInt = "Tecnico";
 
