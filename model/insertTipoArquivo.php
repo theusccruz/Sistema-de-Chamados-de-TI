@@ -12,7 +12,7 @@ $conn = Database::getConnection();
 $dado = Usuario::dadosUsuario();
 
 $idUser = $dado['ID'];
-$setorUser = $dado['SETOR_ID'];
+$setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
 $data = date("Y.m.d");

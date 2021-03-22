@@ -5,7 +5,7 @@
 	$conn = Database::getConnection();
 
 	$sql = "SELECT
-        USU.id as ID, USU.nome, SETR.SETOR as SETOR, USU.cargo, USU.SETOR_ID
+        USU.id as ID, USU.nome, SETR.SETOR as SETOR, USU.cargo, USU.setor_id
     FROM usuario USU
         LEFT JOIN SETORES SETR on SETR.ID = USU.setor_id";
 

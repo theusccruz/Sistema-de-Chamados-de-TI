@@ -5,7 +5,7 @@
 	require '../config/conexao.php';
 	$conn = Database::getConnection();
 
-	$sql = "SELECT * FROM USUARIO WHERE SETOR_ID = 3";
+	$sql = "SELECT * FROM USUARIO WHERE setor_id = 3";
 	$stms = $conn->prepare($sql);	
 	$stms->execute();
 

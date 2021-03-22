@@ -1,11 +1,11 @@
 <?php
-	header('Content-Type: application/json');
-	require '../model/userClass.php';
+header('Content-Type: application/json');
+require '../model/userClass.php';
 
 
-	$conn = Database::getConnection();
+$conn = Database::getConnection();
 
-	$sql = "SELECT
+$sql = "SELECT
                 CH.id, CH.id_solicitante, CH.id_departamento, CH.ID_TECNICO, 
                 CH.assunto, CH.ID_STATUS, CH.ID_PRIORIDADE,
                 CH.ID_CATEGORIA, CAT.descr AS categoria,
@@ -23,13 +23,13 @@
                 CASE WHEN CH.ID_STATUS IN (2) THEN 1 ELSE 0 END DESC, 
                 PRIORI.id DESC, CH.ID DESC";
 
-	$stms = $conn->prepare($sql);	
-	$stms->execute();
+$stms = $conn->prepare($sql);
+$stms->execute();
 
 
-	$linha = $stms->fetchAll(PDO::FETCH_ASSOC);
-		if ($linha >= 0) {
-			echo json_encode($linha);
-		} else {
-			echo json_encode("Dadossa");
-		}
+$linha = $stms->fetchAll(PDO::FETCH_ASSOC);
+if ($linha >= 0) {
+    echo json_encode($linha);
+} else {
+    echo json_encode("Dadossa");
+}

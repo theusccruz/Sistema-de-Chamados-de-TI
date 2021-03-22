@@ -8,8 +8,8 @@ $conn = Database::getConnection();
 //DADOS DO USUÁRIO
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
-$setorUser = $dado['SETOR_ID'];	
+$idUser = $dado['id'];
+$setorUser = $dado['setor_id'];	
 
 $sql = "SELECT
             CH.id, CH.id_solicitante, CH.id_departamento, CH.ID_TECNICO, CH.assunto, CAT.descr AS categoria, CH.ID_STATUS, 
@@ -17,7 +17,7 @@ $sql = "SELECT
             CH.hora_abertura, CH.data_abertura, CH.hora_fechamento, CH.data_fechamento,
             (SELECT ANX.id FROM ANEXOS ANX
             where ANX.chamado_id = CH.ID
-            rows 1) AS ANX
+            LIMIT 1) AS ANX
         FROM CHAMADOS CH
             left join STATUS STS ON STS.id = CH.id_status
             left join CATEGORIA CAT ON CAT.ID = CH.id_categoria

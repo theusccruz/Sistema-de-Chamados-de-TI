@@ -4,7 +4,6 @@ class DBblob
 {
     public function insert($conn, $chamado_id, $extensao, $arquivo, $descr, $nome, $tipo)
     {
-
         $sql = "INSERT INTO ANEXOS 
 					(CHAMADO_ID, TIPOANEXO_ID, ARQUIVO, DESCR, NOME_ARQ, TIPO_ARQ)
 				VALUES 

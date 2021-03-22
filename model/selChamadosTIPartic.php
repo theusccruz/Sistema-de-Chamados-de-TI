@@ -23,7 +23,7 @@
         CH.hora_abertura, CH.data_abertura,
         (SELECT ANX.id FROM ANEXOS ANX
         where ANX.chamado_id = CH.ID
-        rows 1) AS ANX
+        LIMIT 1) AS ANX
     FROM CHAMADOS CH
         left join STATUS STS ON STS.id = CH.id_status
         left join CATEGORIA CAT ON CAT.ID = CH.id_categoria
