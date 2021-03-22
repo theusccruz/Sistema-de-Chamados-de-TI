@@ -11,9 +11,9 @@ async function getAllChamados() {
 
         users.forEach(retornoUsuario => {
 
-            if (retornoUsuario.ID == retornoChamado.ID_TECNICO) {
+            if (retornoUsuario.id == retornoChamado.id_tecnico) {
 
-                retornoChamado.ID_TECNICO = retornoUsuario.NOME;
+                retornoChamado.id_tecnico = retornoUsuario.nome;
 
             }
         })
@@ -23,39 +23,33 @@ async function getAllChamados() {
     dados.innerHTML = "";
     chamadosFormat.forEach(resultado => {
         //console.log(resultado)
-        resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-        resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
+        resultado.data_abertura = formatarData(resultado.data_abertura);
+        resultado.hora_abertura = formatarHora(resultado.hora_abertura);
 
         let posicao = "";
         chamadosOrdenados.forEach(colocacao => {
 
-            if (colocacao.ID === resultado.ID) {
-                posicao = colocacao.ORDEM;
+            if (colocacao.id === resultado.id) {
+                posicao = colocacao.ordem;
             }
 
         })
 
-        let ordem = "<a id='" + resultado.ID + "' onclick='ordem(this)' class='colocacao'>" + posicao + "</a>"
+        let ordem = "<a id='" + resultado.id + "' onclick='ordem(this)' class='colocacao'>" + posicao + "</a>"
 
-        if (resultado.DATA_FECHAMENTO === null && resultado.HORA_FECHAMENTO === null) {
+        if (resultado.id_tecnico === null) {
 
-            resultado.DATA_FECHAMENTO = ""
-            resultado.HORA_FECHAMENTO = ""
+            resultado.id_tecnico = ""
         }
 
-        if (resultado.ID_TECNICO === null) {
-
-            resultado.ID_TECNICO = ""
-        }
-
-        let btnVer = "<button class='ver' onclick='detalhes(this);' value='" + resultado.ID +
+        let btnVer = "<button class='ver' onclick='detalhes(this);' value='" + resultado.id +
             "' style='cursor: pointer;'>Ver</button>";
 
         let acao;
-        if (resultado.ID_STATUS == 5) {
+        if (resultado.id_status == 5) {
             
-            acao = "<td><button onclick='fechar(this);' value='" + resultado.ID + "' style='cursor: pointer; margin-bottom: 10%;'>Resolvido</button><br>" +
-                "<button onclick='devolver(this)' value='" + resultado.ID + "' style='cursor: pointer;'>Não Resolvido</button></td>"
+            acao = "<td><button onclick='fechar(this);' value='" + resultado.id + "' style='cursor: pointer; margin-bottom: 10%;'>Resolvido</button><br>" +
+                "<button onclick='devolver(this)' value='" + resultado.id + "' style='cursor: pointer;'>Não Resolvido</button></td>"
 
         } else {
 
@@ -63,7 +57,7 @@ async function getAllChamados() {
 
         }
 
-        switch (resultado.ID_STATUS) {
+        switch (resultado.id_status) {
             case 5:
                 dados.insertAdjacentHTML("afterbegin", gridUser(resultado, btnVer, "concluido", acao, ""));
                 break;
