@@ -225,7 +225,7 @@ function mais(objet) {
 
                             dadosUsuario.forEach(retornoUsuario => {
 
-                                if (retornoUsuario.ID == dadosMaisretornoIntera.autor_id) {
+                                if (retornoUsuario.id == dadosMais.autor_id) {
                                     
                                     dadosMais.autor_id = retornoUsuario.nome;
 
