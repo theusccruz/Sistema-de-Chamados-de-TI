@@ -56,27 +56,27 @@ function finalizar(objeto) {
 
                                     dadosUsuario.forEach(retornoUsuario => {
 
-                                        if (retornoUsuario.ID == dadosChamado.ID_SOLICITANTE) {
+                                        if (retornoUsuario.id == dadosChamado.id_solicitante) {
 
-                                            dadosChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                                            dadosChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+                                            dadosChamado.id_solicitante = retornoUsuario.nome;
+                                            dadosChamado.id_departamento = retornoUsuario.setor;
                                         }
 
-                                        if (retornoUsuario.ID == dadosChamado.ID_TECNICO) {
+                                        if (retornoUsuario.id == dadosChamado.id_tecnico) {
 
-                                            dadosChamado.ID_TECNICO = retornoUsuario.NOME;
+                                            dadosChamado.id_tecnico = retornoUsuario.nome;
                                         }
 
                                     })
 
 
-                                    contentFinal.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.ID +
+                                    contentFinal.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.id +
                                         "' size='10' readonly='true'>" + "<input type='text' name='cript' value='" +
                                         dadosChamado[0] + "' hidden>" + "<br><br>");
-                                    assunto.innerHTML = dadosChamado.ASSUNTO;
-                                    solicitante.innerHTML = dadosChamado.ID_SOLICITANTE;
-                                    setor.innerHTML = dadosChamado.ID_DEPARTAMENTO;
-                                    ti.innerHTML = dadosChamado.ID_TECNICO;
+                                    assunto.innerHTML = dadosChamado.assunto;
+                                    solicitante.innerHTML = dadosChamado.id_solicitante;
+                                    setor.innerHTML = dadosChamado.id_departamento;
+                                    ti.innerHTML = dadosChamado.id_tecnico;
 
 
                                 })

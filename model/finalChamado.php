@@ -15,7 +15,7 @@ $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -50,13 +50,13 @@ if ($cript != geraHash($id)) {
 			$stms->execute();
 			$linha = $stms->fetch(PDO::FETCH_ASSOC);
 
-			$finalizado = $linha['FINALIZADO'];
+			$finalizado = $linha['finalizado'];
 
 			//finalização feita pelo tecnico
 
 			$sql = "UPDATE CHAMADOS CH SET
-							CH.id_status = :STS,
-							CH.FINALIZADO = :FINALI
+							id_status = :STS,
+							finalizado = :FINALI
 						WHERE CH.id = :ID";
 
 			$stms = $conn->prepare($sql);
