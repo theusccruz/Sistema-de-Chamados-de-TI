@@ -134,24 +134,6 @@ if (empty($_POST['desc']) || empty($_POST['cat']) || empty($_POST['msg'])) {
 							} else {
 							}
 						}
-						//$data = realpath($_FILES['arquivo']["tmp_name"][$i]);
-						//tratamento do INSERT em ANEXOS
-						// $sql = "INSERT INTO ANEXOS 
-						// 	(CHAMADO_ID, TIPOANEXO_ID, ARQUIVO, DESCR, NOME_ARQ, TIPO_ARQ)
-						// VALUES 
-						// 	(:CHM_ID, :TANX_ID, :ARQ, :DESCR, :NMARQ, :TPARQ)";							
-
-						// $stms = $conn->prepare($sql);
-						// $stms->bindValue(':CHM_ID', $id['id']);
-						// $stms->bindValue(':TANX_ID', $idExtensao);
-						// $stms->bindValue(':ARQ', $data);
-						// $stms->bindValue(':DESCR', $descArquivo);
-						// $stms->bindValue(':NMARQ', $nome);
-						// $stms->bindValue(':TPARQ', $tipo);
-						// $stms->execute();
-
-						//echo json_encode(realpath($_FILES['arquivo']["tmp_name"][$i]));
-
 						$blob = new DBblob;
 
 						$blob->insert($conn, $id['id'], $idExtensao, $arquivo, $descArquivo, $nome, $tipo);

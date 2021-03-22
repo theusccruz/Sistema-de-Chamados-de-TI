@@ -84,7 +84,7 @@ async function conversasFunction(id) {
             file = "";
         } else {
             file = "<tr><td><div class='" + divClassStyle + "'><p class='" + pClassStyle + "'>" +
-                "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" + mensagem.nome_ARQ +
+                "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" + mensagem.nome_arq +
                 "<br><a href='../model/baixarAnexoMSG.php?id=" + mensagem.arq + "'>" +
                 "Baixar anexo <img src='../assets/img/downAnxMsg.png'>" +
                 "</a><br><label style= 'font-size: small'>" + mensagem.hora + " " + mensagem.data + "<label></p></div></td></tr>";
@@ -187,7 +187,7 @@ async function chat(objeto) {
                 file = "";
             } else {
                 file = "<tr><td><div class='" + divClassStyle + "'><p class='" + pClassStyle + "'>" +
-                    "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" + mensagem.nome_ARQ +
+                    "<label style= 'font-size: small'>" + mensagem.autor_id + "<br></label>" + mensagem.nome_arq +
                     "<br><a href='../model/baixarAnexoMSG.php?id=" + mensagem.arq + "'>" +
                     "Baixar anexo <img src='../assets/img/downAnxMsg.png'>" +
                     "</a><br><label style= 'font-size: small'>" + mensagem.hora + " " + mensagem.data + "<label></p></div></td></tr>";
