@@ -30,7 +30,7 @@
     
         $linha = $stms->fetch(PDO::FETCH_ASSOC);
 
-        array_push($linha, geraHash($linha['ID']));
+        array_push($linha, geraHash($linha['id']));
     
         if ($linha >= 0) {
             echo json_encode($linha);        

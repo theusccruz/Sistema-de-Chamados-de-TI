@@ -12,7 +12,7 @@ $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -42,7 +42,7 @@ if ($cript != geraHash($id) || (empty($_POST['tipo']) == true  || $espacoVazioTi
 
     if (strlen($tipo) > 35 || strlen($ext) > 10) {
         echo json_encode("Limite excedido");
-    } else if ($linha['TIPO'] == $tipo && $linha['EXTENSAO'] == $ext) {
+    } else if ($linha['tipo'] == $tipo && $linha['extensao'] == $ext) {
         echo json_encode("sem update");
     } else {
         $sql = "UPDATE TIPO_ANEXO SET

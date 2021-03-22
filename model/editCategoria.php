@@ -12,7 +12,7 @@ $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -40,7 +40,7 @@ if ($cript != geraHash($id) || empty($_POST['desc']) == true || $espacoVazio ===
 
     if (strlen($descCateg) > 27) {
         echo json_encode("Limite excedido");
-    } else if ($linha['DESCR'] == $descCateg) {
+    } else if ($linha['descr'] == $descCateg) {
         echo json_encode("sem update");
     } else {
         $sql = "UPDATE CATEGORIA SET

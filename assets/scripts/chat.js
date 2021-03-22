@@ -115,7 +115,7 @@ async function chat(objeto) {
         let users = await requestFetchWithGet('../model/selUsuariosGrid.php');
         let userSession = await requestFetchWithGet('../model/userSession.php');
         let chamado = await requestFetchWithGet('../model/selChamadoEdit.php?id=' + id);
-        if (chamado.ID_STATUS == 7) {
+        if (chamado.id_status == 7) {
             formMessage.innerHTML = '';          
         }        
 

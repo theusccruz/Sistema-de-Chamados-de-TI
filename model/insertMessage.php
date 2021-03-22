@@ -12,7 +12,7 @@ $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -40,7 +40,7 @@ if ($cript != geraHash($id)) {
     $stms->execute();
 
     $linha = $stms->fetch(PDO::FETCH_ASSOC);
-    $idStatus = $linha['ID_STATUS'];
+    $idStatus = $linha['id_status'];
 
     if ($idStatus != 7) {
         $espacoVazio = trim($_POST["msg"]);
@@ -70,9 +70,9 @@ if ($cript != geraHash($id)) {
 
                 foreach ($lineSql as $line) {
 
-                    if ($line['EXTENSAO'] == $extensao) {
+                    if ($line['extensao'] == $extensao) {
 
-                        $idExtensao = $line['ID'];
+                        $idExtensao = $line['id'];
                     } else {
                     }
                 }
@@ -87,7 +87,7 @@ if ($cript != geraHash($id)) {
                 $dadosChamado = $stms->fetch(PDO::FETCH_ASSOC);
 
                 $tipoUsuario;
-                if ($idUser == $dadosChamado['ID_SOLICITANTE']) {
+                if ($idUser == $dadosChamado['id_solicitante']) {
                     $tipoUsuario = "Solicitante";
                 } else {
                     $tipoUsuario = "Tecnico";
@@ -119,7 +119,7 @@ if ($cript != geraHash($id)) {
 
                 $stms = $conn->prepare($sql);
                 $stms->bindValue(':CHM_ID', $id);
-                $stms->bindValue(':MSG_ID', $linha2['ID']);
+                $stms->bindValue(':MSG_ID', $linha2['id']);
                 $stms->bindValue(':NOME_ARQ', $nome);
                 $stms->bindValue(':EXT', $extensao);
                 $stms->bindValue(':TIPANX_ID', $idExtensao);
@@ -153,9 +153,9 @@ if ($cript != geraHash($id)) {
                 for ($i = 0; $i < count($dadosInteracao); $i++) {
 
                     if (
-                        $idUser != $dadosChamado['ID_SOLICITANTE']
-                        && $idUser != $dadosChamado['ID_TECNICO']
-                        && $idUser != $dadosInteracao[$i]['AUTOR_ID']
+                        $idUser != $dadosChamado['id_solicitante']
+                        && $idUser != $dadosChamado['id_tecnico']
+                        && $idUser != $dadosInteracao[$i]['autor_id']
                     ) {
                         $condicao = true;
                     } else {
@@ -202,7 +202,7 @@ if ($cript != geraHash($id)) {
                 $dadosChamado = $stms->fetch(PDO::FETCH_ASSOC);
 
                 $tipoUsuario;
-                if ($idUser == $dadosChamado['ID_SOLICITANTE']) {
+                if ($idUser == $dadosChamado['id_solicitante']) {
                     $tipoUsuario = "Solicitante";
                 } else {
                     $tipoUsuario = "Tecnico";
@@ -247,9 +247,9 @@ if ($cript != geraHash($id)) {
                 for ($i = 0; $i < count($dadosInteracao); $i++) {
 
                     if (
-                        $idUser != $dadosChamado['ID_SOLICITANTE']
-                        && $idUser != $dadosChamado['ID_TECNICO']
-                        && $idUser != $dadosInteracao[$i]['AUTOR_ID']
+                        $idUser != $dadosChamado['id_solicitante']
+                        && $idUser != $dadosChamado['id_tecnico']
+                        && $idUser != $dadosInteracao[$i]['autor_id']
                     ) {
                         $condicao = true;
                     } else {
@@ -300,9 +300,9 @@ if ($cript != geraHash($id)) {
 
                             foreach ($lineSql as $line) {
 
-                                if ($line['EXTENSAO'] == $extensao) {
+                                if ($line['extensao'] == $extensao) {
 
-                                    $idExtensao = $line['ID'];
+                                    $idExtensao = $line['id'];
                                 } else {
                                 }
                             }
@@ -333,7 +333,7 @@ if ($cript != geraHash($id)) {
 
                             $stms = $conn->prepare($sql);
                             $stms->bindValue(':CHM_ID', $id);
-                            $stms->bindValue(':MSG_ID', $linha2['ID']);
+                            $stms->bindValue(':MSG_ID', $linha2['id']);
                             $stms->bindValue(':NOME_ARQ', $nome);
                             $stms->bindValue(':EXT', $extensao);
                             $stms->bindValue(':TIPANX_ID', $idExtensao);
