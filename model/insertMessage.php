@@ -6,6 +6,7 @@ header('Content-Type: application/json');
 
 require '../model/userClass.php';
 require '../model/functions.php';
+require 'Blob.php';
 
 //conexão
 $conn = Database::getConnection();
@@ -52,7 +53,7 @@ if ($cript != geraHash($id)) {
             //Envio somente de arquivo no chat
             if ($_FILES['arquivo']["size"] <= 26214500) {
                 //FILES 
-                $arquivo = file_get_contents($_FILES['arquivo']["tmp_name"]);
+                $arquivo = $_FILES['arquivo']["tmp_name"];
                 $nome = $_FILES['arquivo']["name"];
                 $tipo = $_FILES['arquivo']["type"];
                 $tamanho = $_FILES['arquivo']["size"];
@@ -128,8 +129,11 @@ if ($cript != geraHash($id)) {
                 $stms->bindValue(':ATRID', $idUser);
                 $stms->execute();
 
-                $linha2 = $stms->fetch(PDO::FETCH_ASSOC);
+                $blob = new DBblob;
 
+				$blob->insertBlbInMessage($conn, $id, $linha2['id'], $nome, $extensao, $idExtensao, $arquivo, $tipo, $idUser);
+
+                $linha2 = $stms->fetch(PDO::FETCH_ASSOC);
                 if ($linha2 >= 0) {
 
                     echo json_encode($id);

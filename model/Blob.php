@@ -33,36 +33,38 @@ class DBblob
 
         $conn->commit();
     }
+
+    public function insertBlbInMessage($conn, $chamado_id, $msg_id, $nome, $extensao, $idExtensao, $arquivo, $tipo, $idUser)
+    {
+        $sql = "INSERT INTO ANEXO_MSG
+        (CHAMADO_ID, MENSAGEM_ID, NOME_ARQ, EXTENSAO, TIPOANX_ID, ARQUIVO, TIPO_ARQ, AUTOR_ID)
+    VALUES 
+        (:CHM_ID, :MSG_ID, :NOME_ARQ, :EXT, :TIPANX_ID, :ARQ, :TPARQ, :ATRID) returning ID";
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn->beginTransaction();
+        $oid = $conn->pgsqlLOBCreate();
+        $strm = $conn->pgsqlLOBOpen($oid, 'w');
+
+        $fh = fopen($arquivo, 'rb');
+        stream_copy_to_stream($fh, $strm);
+        //
+        $fh = null;
+        $strm = null;
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute([
+            ':CHM_ID' => $chamado_id,
+            ':MSG_ID' => $msg_id,
+            ':NOME_ARQ' => $nome,
+            ':EXT' => $extensao,
+            ':TIPANX_ID' => $idExtensao,
+            ':ARQ' => $oid,
+            ':TPARQ' => $tipo,
+            ':ATRID' => $idUser
+        ]);
+
+        $conn->commit();
+    }
 }
-
-
-
-// try {
-//     $this->pdo->beginTransaction();
-
-//     // create large object
-//     $data = $this->pdo->pgsqlLOBCreate();
-//     $strm = $this->pdo->pgsqlLOBOpen($data, 'w');
-
-//     // read data from the file and copy the the stream
-//     $fh = fopen($pathOfTheFile, 'rb');
-//     stream_copy_to_stream($fh, $strm);
-//     //
-//     $fh = null;
-//     $strm = null;
-
-//     $stmt = $this->pdo->prepare($sql);
-
-//     $stmt->execute([
-//         ':user_id' => $userid,
-//         ':mime_class' => $mimeClass,
-//         ':mime_name' => $mimeName,
-//         ':mime_data' => $data,
-//     ]);
-
-//     // commit the transaction
-//     $this->pdo->commit();
-// } catch (\Exception $e) {
-//     $this->pdo->rollBack();
-//     throw $e;
-// }
