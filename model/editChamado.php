@@ -15,7 +15,7 @@ $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 
@@ -204,10 +204,10 @@ if ($cript != geraHash($id)) {
 			} else {
 				$sql2 =
 					"UPDATE chamados CH SET
-								CH.id_tecnico = :TI,
-								CH.id_categoria = :CAT,
-								CH.id_status = :STS,
-								CH.id_prioridade = :PRIORI
+								id_tecnico = :TI,
+								id_categoria = :CAT,
+								id_status = :STS,
+								id_prioridade = :PRIORI
 							WHERE CH.ID = :ID";
 
 
