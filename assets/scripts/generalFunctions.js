@@ -110,7 +110,7 @@ function gridHistory(dados, btnVer, classStatus, setor) {
             '<br>' + dados.hora_fechamento +
             '</td><td>' + dados.assunto +
             '</td><td>' + dados.id_departamento +
-            '</td><td>' + dados.id_departamento +
+            '</td><td>' + dados.id_solicitante +
             '</td><td>' + dados.categoria +
             "<td>" + dados.prioridade + "</td>" +
             "</td><td class='space'><p class='" + classStatus + "'>" + dados.status +
@@ -127,7 +127,7 @@ function gridHistory(dados, btnVer, classStatus, setor) {
             '<br>' + dados.hora_fechamento +
             '</td><td>' + dados.assunto +
             '</td><td>' + dados.id_departamento +
-            '</td><td>' + dados.id_departamento +
+            '</td><td>' + dados.id_solicitante +
             '</td><td>' + dados.categoria +
             "<td>" + dados.prioridade + "</td>" +
             "</td><td class='space'><p class='" + classStatus + "'>" + dados.status +
