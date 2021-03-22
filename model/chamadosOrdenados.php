@@ -40,13 +40,13 @@
 	$dadosEmEspera = json_decode(json_encode($linha2));
 
 	for ($i=0; $i < count($dadosEmEspera); $i++) { 
-		$dadosEmEspera[$i]->ORDEM = $i + 1 ."º";
+		$dadosEmEspera[$i]->ordem = $i + 1 ."º";
 	}
 
 	$dadosEmAtd = json_decode(json_encode($linha));
 
 	for ($i=0; $i < count($dadosEmAtd); $i++) { 
-		$dadosEmAtd[$i]->ORDEM = "";
+		$dadosEmAtd[$i]->ordem = "";
 	}
 
 	echo json_encode(array_merge($dadosEmAtd,$dadosEmEspera));

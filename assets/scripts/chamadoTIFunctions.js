@@ -278,7 +278,7 @@ async function getAllChamados() {
                 let posicao = "";
                 chamadosOrdenados.forEach(colocacao => {
 
-                    if (colocacao.id === resultado.ID) {
+                    if (colocacao.id === resultado.id) {
                         posicao = colocacao.ordem;
                     }
 

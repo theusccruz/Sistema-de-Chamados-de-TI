@@ -45,16 +45,16 @@ function ordem(objeto) {
 
                                             dadosUsuario.forEach(retornoUsuario => {
 
-                                                if (retornoUsuario.ID == retornoDados.ID_TECNICO) {
+                                                if (retornoUsuario.id == retornoDados.id_tecnico) {
 
-                                                    retornoDados.ID_TECNICO = retornoUsuario.NOME;
+                                                    retornoDados.id_tecnico = retornoUsuario.nome;
 
                                                 }
 
-                                                if (retornoUsuario.ID == retornoDados.ID_SOLICITANTE) {
+                                                if (retornoUsuario.id == retornoDados.id_solicitante) {
 
-                                                    retornoDados.ID_SOLICITANTE = retornoUsuario.NOME;
-                                                    retornoDados.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+                                                    retornoDados.id_solicitante = retornoUsuario.nome;
+                                                    retornoDados.id_departamento = retornoUsuario.setor;
                                                 }
                                             })
 
@@ -64,29 +64,29 @@ function ordem(objeto) {
                                         chamado.forEach(resultado => {
                                             //console.log(resultado);
 
-                                            resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-                                            resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
+                                            resultado.data_abertura = formatarData(resultado.data_abertura);
+                                            resultado.hora_abertura = formatarHora(resultado.hora_abertura);
 
-                                            if (resultado.STATUS == "Concluído" || resultado.STATUS == "Devolvido") {
+                                            if (resultado.status == "Concluído" || resultado.status == "Devolvido") {
 
-                                                resultado.STATUS = "Em atendimento";
+                                                resultado.status = "Em atendimento";
 
                                             } else {
 
                                             }
                                             let classe;
-                                            if (resultado.ID == idOrdem) {
+                                            if (resultado.id == idOrdem) {
                                                 classe = "meuChamado";
 
-                                            } else if (resultado.STATUS == "Em atendimento") {
+                                            } else if (resultado.status == "Em atendimento") {
                                                 classe = "emAtd";
 
                                             }
 
-                                            dadosOrdem.insertAdjacentHTML('beforeend', "<tr class='" + classe + "'>" + "<td>" + resultado.ORDEM + "</td>" +
-                                                "<td>" + resultado.ID + "</td>" + "<td>" + resultado.HORA_ABERTURA + "<br>" + resultado.DATA_ABERTURA + "</td>" +
-                                                "<td>" + resultado.STATUS + "</td>" + "<td>" + resultado.ID_SOLICITANTE +
-                                                "<td>" + resultado.ID_DEPARTAMENTO + "</td></tr>");
+                                            dadosOrdem.insertAdjacentHTML('beforeend', "<tr class='" + classe + "'>" + "<td>" + resultado.ordem + "</td>" +
+                                                "<td>" + resultado.id + "</td>" + "<td>" + resultado.hora_abertura + "<br>" + resultado.data_abertura + "</td>" +
+                                                "<td>" + resultado.status + "</td>" + "<td>" + resultado.id_solicitante +
+                                                "<td>" + resultado.id_departamento + "</td></tr>");
 
 
 
