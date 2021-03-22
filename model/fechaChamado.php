@@ -14,7 +14,7 @@ $conn = Database::getConnection();
 //variaveis de usuario da sessão
 $dado = Usuario::dadosUsuario();
 
-$idUser = $dado['ID'];
+$idUser = $dado['id'];
 $setorUser = $dado['setor_id'];
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -40,10 +40,10 @@ if ($cript != geraHash($id)) {
 
         $sql =
             "UPDATE CHAMADOS CH SET
-                    CH.id_status = :STS,
-                    CH.AVALIACAO = :AVA,
-                    CH.data_fechamento = :DATAF,
-                    CH.hora_fechamento = :HORAF
+                    id_status = :STS,
+                    avaliacao = :AVA,
+                    data_fechamento = :DATAF,
+                    hora_fechamento = :HORAF
                 WHERE CH.id = :ID";
 
         $stms = $conn->prepare($sql);

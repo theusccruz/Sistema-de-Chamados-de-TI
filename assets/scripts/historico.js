@@ -9,12 +9,12 @@ async function getAllHistory() {
     let chamadosTI = chamados.map(retornoChamado => {
         users.forEach(retornoUsuario => {
 
-            if (retornoUsuario.ID == retornoChamado.ID_SOLICITANTE) {
-                retornoChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                retornoChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+            if (retornoUsuario.id == retornoChamado.id_solicitante) {
+                retornoChamado.id_solicitante = retornoUsuario.nome;
+                retornoChamado.id_departamento = retornoUsuario.setor;
             }
-            if (retornoUsuario.ID == retornoChamado.ID_TECNICO) {
-                retornoChamado.ID_TECNICO = retornoUsuario.NOME;
+            if (retornoUsuario.id == retornoChamado.id_tecnico) {
+                retornoChamado.id_tecnico = retornoUsuario.nome;
             }
         })
 
@@ -24,12 +24,12 @@ async function getAllHistory() {
     let chamadosSolicitante = chamadosUser.map(retornoChamado => {
         users.forEach(retornoUsuario => {
 
-            if (retornoUsuario.ID == retornoChamado.ID_SOLICITANTE) {
-                retornoChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                retornoChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+            if (retornoUsuario.id == retornoChamado.id_solicitante) {
+                retornoChamado.id_solicitante = retornoUsuario.nome;
+                retornoChamado.id_departamento = retornoUsuario.setor;
             }
-            if (retornoUsuario.ID == retornoChamado.ID_TECNICO) {
-                retornoChamado.ID_TECNICO = retornoUsuario.NOME;
+            if (retornoUsuario.id == retornoChamado.id_tecnico) {
+                retornoChamado.id_tecnico = retornoUsuario.nome;
             }
         })
 
@@ -38,22 +38,22 @@ async function getAllHistory() {
 
     if (userSession.SETOR_ID == 3) {
         chamadosTI.forEach(resultado => {
-            resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-            resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
-            resultado.DATA_FECHAMENTO = formatarData(resultado.DATA_FECHAMENTO);
-            resultado.HORA_FECHAMENTO = formatarHora(resultado.HORA_FECHAMENTO);
+            resultado.data_abertura = formatarData(resultado.data_abertura);
+            resultado.hora_abertura = formatarHora(resultado.hora_abertura);
+            resultado.data_fechamento = formatarData(resultado.data_fechamento);
+            resultado.hora_fechamento = formatarHora(resultado.hora_fechamento);
     
-            let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.ID + "' style='cursor: pointer;'>Ver</button></td>";
+            let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.id + "' style='cursor: pointer;'>Ver</button></td>";
             dadosHistory.insertAdjacentHTML("beforeend", gridHistory(resultado, btnVer, "fechado", userSession.SETOR_ID));
         });        
     } else {
         chamadosSolicitante.forEach(resultado => {
-            resultado.DATA_ABERTURA = formatarData(resultado.DATA_ABERTURA);
-            resultado.HORA_ABERTURA = formatarHora(resultado.HORA_ABERTURA);
-            resultado.DATA_FECHAMENTO = formatarData(resultado.DATA_FECHAMENTO);
-            resultado.HORA_FECHAMENTO = formatarHora(resultado.HORA_FECHAMENTO);
+            resultado.data_abertura = formatarData(resultado.data_abertura);
+            resultado.hora_abertura = formatarHora(resultado.hora_abertura);
+            resultado.data_fechamento = formatarData(resultado.data_fechamento);
+            resultado.hora_fechamento = formatarHora(resultado.hora_fechamento);
     
-            let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.ID + "' style='cursor: pointer;'>Ver</button></td>";
+            let btnVer = "<td><button class='ver' onclick='detalhes(this);' value='" + resultado.id + "' style='cursor: pointer;'>Ver</button></td>";
             dadosHistory.insertAdjacentHTML("beforeend", gridHistory(resultado, btnVer, "fechado", userSession.SETOR_ID));
         });             
     }

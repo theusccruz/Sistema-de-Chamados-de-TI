@@ -73,28 +73,28 @@ function fechar(objeto) {
 
                                     dadosUsuario.forEach(retornoUsuario => {
 
-                                        if (retornoUsuario.ID == dadosChamado.ID_SOLICITANTE) {
+                                        if (retornoUsuario.id == dadosChamado.id_solicitante) {
 
-                                            dadosChamado.ID_SOLICITANTE = retornoUsuario.NOME;
-                                            dadosChamado.ID_DEPARTAMENTO = retornoUsuario.SETOR;
+                                            dadosChamado.id_solicitante = retornoUsuario.nome;
+                                            dadosChamado.id_departamento = retornoUsuario.setor;
                                         }
 
-                                        if (retornoUsuario.ID == dadosChamado.ID_TECNICO) {
+                                        if (retornoUsuario.id == dadosChamado.id_tecnico) {
 
-                                            dadosChamado.ID_TECNICO = retornoUsuario.NOME;
+                                            dadosChamado.id_tecnico = retornoUsuario.nome;
                                         }
 
                                     })
 
 
-                                    contentFechar.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.ID +
+                                    contentFechar.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.id +
                                         "' size='10' readonly='true'>" + "<input type='text' name='cript' value='" +
                                         dadosChamado[0] + "' hidden>" + "<br><br>");
 
-                                    assuntoUser.innerHTML = dadosChamado.ASSUNTO;
-                                    solicitanteUser.innerHTML = dadosChamado.ID_SOLICITANTE;
-                                    setorUser.innerHTML = dadosChamado.ID_DEPARTAMENTO;
-                                    tiUser.innerHTML = dadosChamado.ID_TECNICO;
+                                    assuntoUser.innerHTML = dadosChamado.assunto;
+                                    solicitanteUser.innerHTML = dadosChamado.id_solicitante;
+                                    setorUser.innerHTML = dadosChamado.id_departamento;
+                                    tiUser.innerHTML = dadosChamado.id_tecnico;
 
 
 
@@ -203,7 +203,7 @@ function devolver(objeto) {
 
                 .then(dadosChamado => {
 
-                    contentDevolver.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.ID +
+                    contentDevolver.insertAdjacentHTML("afterbegin", "Chamado: <input type='text' class='dadosCH' name='id' value='" + dadosChamado.id +
                         "' size='10' readonly='true'>" + "<input type='text' name='cript' value='" +
                         dadosChamado[0] + "' hidden>" + "<br><br>");
 

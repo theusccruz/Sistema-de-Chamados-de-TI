@@ -21,20 +21,20 @@ async function categorias() {
         let colunExcluir = document.createElement('td');
 
         btnEditar.innerHTML = "Editar";
-        btnEditar.setAttribute('value', resultado.DESCR);
-        btnEditar.setAttribute('id', resultado.ID);
+        btnEditar.setAttribute('value', resultado.descr);
+        btnEditar.setAttribute('id', resultado.id);
         btnEditar.setAttribute('class', 'btnAcao');
         btnEditar.setAttribute('onclick', 'editCategoria(this)');
 
         btnExcluir.innerHTML = "Excluir";
-        btnExcluir.setAttribute('value', resultado.DESCR);
-        btnExcluir.setAttribute('id', resultado.ID);
+        btnExcluir.setAttribute('value', resultado.descr);
+        btnExcluir.setAttribute('id', resultado.id);
         btnExcluir.setAttribute('class', 'btnAcao');
         btnExcluir.setAttribute('onclick', 'deleteCategoria(this)');
 
         linha.setAttribute('class', 'linhaCateg');
 
-        colunDesc.innerHTML = resultado.DESCR;
+        colunDesc.innerHTML = resultado.descr;
         colunEditar.appendChild(btnEditar);
         colunExcluir.appendChild(btnExcluir);
 
@@ -106,7 +106,7 @@ async function editCategoria(object) {
         descCatEdit.focus();
 
         categ = await requestFetchWithGet('../model/selCategorias.php?id=' + object.id);
-        contentEditCateg.insertAdjacentHTML("afterbegin", "<input type='text' name='id' value='" + categ.ID +
+        contentEditCateg.insertAdjacentHTML("afterbegin", "<input type='text' name='id' value='" + categ.id +
             "' size='10' readonly='true' hidden='true'>" + "<input type='text' name='cript' value='" +
             categ[0] + "' hidden>");
     }
@@ -132,7 +132,7 @@ formEditCategoria.addEventListener("submit", e => {
 async function deleteCategoria(object) {
     categ = await requestFetchWithGet('../model/selCategorias.php?id=' + object.id);
 
-    let excluir = confirm("Deseja deletar a categoria " + categ.DESCR + "?");
+    let excluir = confirm("Deseja deletar a categoria " + categ.descr + "?");
     if (excluir == true) {
         await requestFetchWithGet('../model/deleteCategoria.php?id=' + object.id);
         categorias();

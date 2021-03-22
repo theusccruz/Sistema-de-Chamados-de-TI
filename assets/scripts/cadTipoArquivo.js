@@ -25,23 +25,23 @@ async function tiposArquivos() {
         let colunExcluir = document.createElement('td');
 
         btnEditar.innerHTML = "Editar";
-        btnEditar.setAttribute('value', resultado.TIPO);
-        btnEditar.setAttribute('name', resultado.EXTENSAO);
-        btnEditar.setAttribute('id', resultado.ID);
+        btnEditar.setAttribute('value', resultado.tipo);
+        btnEditar.setAttribute('name', resultado.extensao);
+        btnEditar.setAttribute('id', resultado.id);
         btnEditar.setAttribute('class', 'btnAcao');
         btnEditar.setAttribute('onclick', 'editTipoArquivo(this)');
 
         btnExcluir.innerHTML = "Excluir";
-        btnExcluir.setAttribute('value', resultado.TIPO);
-        btnExcluir.setAttribute('id', resultado.ID);
+        btnExcluir.setAttribute('value', resultado.tipo);
+        btnExcluir.setAttribute('id', resultado.id);
         btnExcluir.setAttribute('class', 'btnAcao');
         btnExcluir.setAttribute('onclick', 'deleteTipoArquivo(this)');
 
         linha.setAttribute('class', 'linhaCateg');
 
-        colunId.innerHTML = resultado.ID;
-        colunTipo.innerHTML = resultado.TIPO;
-        colunExt.innerHTML = resultado.EXTENSAO;
+        colunId.innerHTML = resultado.id;
+        colunTipo.innerHTML = resultado.tipo;
+        colunExt.innerHTML = resultado.extensao;
         colunEditar.appendChild(btnEditar);
         colunExcluir.appendChild(btnExcluir);
 
@@ -118,7 +118,7 @@ async function editTipoArquivo(object) {
         descTipoEdit.focus();
 
         tipo = await requestFetchWithGet('../model/selTiposArquivo.php?id=' + object.id);
-        contentEditTipoArquivo.insertAdjacentHTML("afterbegin", "<input type='text' name='id' value='" + tipo.ID +
+        contentEditTipoArquivo.insertAdjacentHTML("afterbegin", "<input type='text' name='id' value='" + tipo.id +
             "' size='10' readonly='true' hidden='true'>" + "<input type='text' name='cript' value='" +
             tipo[0] + "' hidden>");
     }
@@ -144,7 +144,7 @@ formEditTipoArquivo.addEventListener("submit", e => {
 async function deleteTipoArquivo(object) {
     tipo = await requestFetchWithGet('../model/selTiposArquivo.php?id=' + object.id);
 
-    let excluir = confirm("Deseja deletar esse tipo de arquivo " + tipo.TIPO + "?");
+    let excluir = confirm("Deseja deletar esse tipo de arquivo " + tipo.tipo + "?");
     if (excluir == true) {
         await requestFetchWithGet('../model/deleteTipoArquivo.php?id=' + object.id);
         tiposArquivos();
